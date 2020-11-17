@@ -21,3 +21,9 @@ About closing doors, windows and lights if the current time is outside working h
 - Language to use : Java.   
 - Framework to use : SpringBoot fo Rest services  
 - OM2M can be used for sensors and actuators based architecture.
+
+## Port Services Allocation : 
+| Service     | Port        |
+| ----------- | ----------- |
+| Alarm       | 8081        |
+| Presence    | 8082        |
