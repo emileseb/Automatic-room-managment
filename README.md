@@ -27,6 +27,23 @@ About closing doors, windows and lights if the current time is outside working h
 | ----------- | ----------- |
 | Alarm       | 8001        |
 | Presence    | 8002        |
+| Thermometer | 8003        |
+| Heater      | 8004        |
 
 ## Running the services
 `make run`
+
+## Service Spec
+
+### Alarm
+When recieving a POST request on /alarm/{duration} triggers the alarm for {duration} minutes
+Return a String Warning that the alarm has been triggered
+
+### Presence
+When recieving a GET reguest on /presence
+Return a JSON boolean of the presence
+
+### Thermometer
+When recieving a GET request on /thermometer/{room} give the temperature in the asked room
+Two existing room : indoor ; outdoor
+Return in a JSON a random value between 0 and 30°C

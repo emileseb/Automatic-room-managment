@@ -1,9 +1,10 @@
 package fr.insa.thermometerservice;
 
-
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class ThermometerResource {
@@ -11,9 +12,9 @@ public class ThermometerResource {
     private final Thermometer outdoorThermometer = new Thermometer("outdoor");
 
     @GetMapping(value = "/thermometer/{room}")
-    public int setAlarm(@PathVariable String room){
+    public String setAlarm(@PathVariable String room){
         Thermometer t = Thermometer.findByRoom(room);
-        if (t==null) return -100;
-        return t.getTemperature();
+        if (t==null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Existing Room");
+        return "{ \"temperature\" : " + t.getTemperature() + " }";
     }
 }
