@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AlarmResource {
-    private Alarm alarm=new Alarm(1);
+    private final Alarm alarm = new Alarm();
 
     @PostMapping(value = "/alarm/{id}")
     public String setAlarm(@PathVariable int id){
