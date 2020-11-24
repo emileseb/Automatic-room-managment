@@ -8,11 +8,11 @@
 		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>fr.insa.AlarmService</groupId>
-	<artifactId>PresenceManagement</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>fr.insa.PresenceManagement</groupId>
+	<artifactId>presencemanagement</artifactId>
+	<version>alpha</version>
 	<name>PresenceManagement</name>
-	<description>Service for mangement presence</description>
+	<description>Service for management presence</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -25,5 +25,8 @@ About closing doors, windows and lights if the current time is outside working h
 ## Port Services Allocation : 
 | Service     | Port        |
 | ----------- | ----------- |
-| Alarm       | 8081        |
-| Presence    | 8082        |
+| Alarm       | 8001        |
+| Presence    | 8002        |
+
+## Running the services
+`make run`

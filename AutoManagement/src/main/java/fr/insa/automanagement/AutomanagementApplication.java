@@ -8,14 +8,19 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
+import static java.util.concurrent.TimeUnit.*;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
-public class AutomanagementApplication {
+public class AutomanagementApplication implements Runnable {
 
     // Alarm API
-    private final String alarmAPIEndpoint = "http://localhost:8001/alarm";
+    private final String alarmAPIEndpoint = "http://localhost:8001/alarm/1";
 
     // Presence detector API
     private final String presenceAPIEndpoint = "http://localhost:8002/presence";
@@ -27,29 +32,33 @@ public class AutomanagementApplication {
     private RestTemplate restTemplate;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+
+        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
+
+
+        //schedule to run after sometime
+        System.out.println("Current Time = "+new Date());
+
         AutomanagementApplication app = new AutomanagementApplication();
-        app.run();
+        scheduledThreadPool.schedule(app, 5, TimeUnit.SECONDS);
+
+        //add some delay to let some threads spawn by scheduler
+        Thread.sleep(30000);
+
+        scheduledThreadPool.shutdown();
     }
 
 
     public void run() {
         restTemplate = new RestTemplate();
-
-        // Continuously scan presence
-        while (this.ON) {
-            // Check for presence
-            if (checkPresence()) {
-                // Check if INSA is closed
-                if (isClosed()) {
-                    // Trigger the alarm
-                    triggerAlarm(1);
-                }
-            }
-            try {
-                wait(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        // Check for presence
+        if (checkPresence()) {
+            // Check if INSA is closed
+            if (isClosed()) {
+                // Trigger the alarm
+                triggerAlarm(1);
             }
         }
     }
@@ -79,7 +88,7 @@ public class AutomanagementApplication {
     public void triggerAlarm(Integer duration) {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        HttpEntity<Integer> entity = new HttpEntity<>(duration, headers);
+        HttpEntity<String> entity = new HttpEntity<>(duration.toString(), headers);
 
         System.out.println(
                 restTemplate.exchange(this.alarmAPIEndpoint, HttpMethod.POST, entity, String.class).getStatusCode());
