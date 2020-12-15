@@ -12,7 +12,7 @@ public class ThermometerResource {
     private final Thermometer outdoorThermometer = new Thermometer("outdoor");
 
     @GetMapping(value = "/thermometer/{room}")
-    public String setAlarm(@PathVariable String room){
+    public String getTemp(@PathVariable String room){
         Thermometer t = Thermometer.findByRoom(room);
         if (t==null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Existing Room");
         return "{ \"temperature\" : " + t.getTemperature() + " }";
