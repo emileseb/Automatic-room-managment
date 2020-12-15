@@ -1,10 +1,11 @@
-package fr.insa.alarmservice;
+package fr.insa.alarmmodel;
 
 import java.util.ArrayList;
 
 public class Alarm {
 
     private static ArrayList<Alarm> alarmList= new ArrayList<>();
+
     private int id;
     private boolean status;
 
@@ -26,9 +27,7 @@ public class Alarm {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
+    public void setStatus(boolean status) {this.status = status;}
 
     public static ArrayList<Alarm> getAlarmList() {
         return alarmList;
