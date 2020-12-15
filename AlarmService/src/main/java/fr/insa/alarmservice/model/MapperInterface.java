@@ -1,4 +1,4 @@
-package fr.insa.alarmmodel;
+package fr.insa.alarmservice.model;
 /**
  * Interface for the mapping operations
  *
