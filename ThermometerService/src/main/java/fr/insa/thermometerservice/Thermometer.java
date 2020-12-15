@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Thermometer {
 
-    private static ArrayList<Thermometer> thermometerList= new ArrayList<>();
+    public static ArrayList<Thermometer> thermometerList = new ArrayList<>();
     private String room;
     private int temperature;
 
