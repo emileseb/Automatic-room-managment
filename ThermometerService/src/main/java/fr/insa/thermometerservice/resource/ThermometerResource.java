@@ -1,5 +1,6 @@
-package fr.insa.thermometerservice;
+package fr.insa.thermometerservice.resource;
 
+import fr.insa.thermometerservice.model.Thermometer;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

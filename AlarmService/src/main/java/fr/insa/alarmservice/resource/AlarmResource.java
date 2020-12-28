@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/om2m")
+//@RequestMapping("/om2m")
 
 public class AlarmResource {
 
@@ -26,8 +26,8 @@ public class AlarmResource {
         return "Alarm triggered for " + duration + " minutes";
     }
 
-    @GetMapping(value="/alarm/{alarm_id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public String getAlarmState(@PathVariable("alarm_id") String alarmId) throws JsonMappingException, JsonProcessingException {
+    //@GetMapping(value="/alarm/{alarm_id}", produces= MediaType.APPLICATION_JSON_VALUE)
+    /*public String getAlarmState(@PathVariable("alarm_id") String alarmId) throws JsonMappingException, JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-M2M-ORIGIN", "admin:admin");
@@ -51,6 +51,6 @@ public class AlarmResource {
         System.out.println(obj1.getVal());
         //The method returns the representation of cin
         return resp;
-    }
+    }*/
 
 }

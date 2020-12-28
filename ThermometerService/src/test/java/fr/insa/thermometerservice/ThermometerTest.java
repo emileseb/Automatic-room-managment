@@ -1,5 +1,6 @@
 package fr.insa.thermometerservice;
 
+import fr.insa.thermometerservice.model.Thermometer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package fr.insa.thermometerservice;
+package fr.insa.thermometerservice.model;
 
 import java.util.ArrayList;
 
