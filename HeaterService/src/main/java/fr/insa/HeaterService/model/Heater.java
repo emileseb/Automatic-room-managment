@@ -1,4 +1,4 @@
-package fr.insa.HeaterService;
+package fr.insa.HeaterService.model;
 
 import java.util.ArrayList;
 

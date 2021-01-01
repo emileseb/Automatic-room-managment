@@ -1,11 +1,11 @@
-package fr.insa.HeaterService.Controller;
+package fr.insa.HeaterService.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.insa.HeaterService.Heater;
+import fr.insa.HeaterService.model.Heater;
 
 @RestController
 public class HeaterRessource {
@@ -17,10 +17,10 @@ public class HeaterRessource {
 		return "test OK";
 	}
 
-	@PostMapping(value="/heater/{id}")
-	public String order(@PathVariable int id) {
+	@PostMapping(value="/heater/{Temperature}")
+	public String order(@PathVariable int temperature) {
 		device.setStatus(true);
-		return "Heat ON";
+		return "Heat ON : " + temperature + "°C";
 	}
 	
 }

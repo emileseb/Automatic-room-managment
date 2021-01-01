@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import static java.util.concurrent.TimeUnit.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -24,6 +25,12 @@ public class AutomanagementApplication implements Runnable {
 
     // Presence detector API
     private final String presenceAPIEndpoint = "http://localhost:8002/presence";
+
+    // Thermometer API
+    private final String thermometerAPIEndpoint = "http://localhost:8003/thermometer/";
+
+    // Heater API
+    private final String heaterAPIEndpoint = "http://localhost:8004/heater/";
 
     // AutoManagement settings
     public boolean ON = true;
@@ -61,7 +68,18 @@ public class AutomanagementApplication implements Runnable {
                 triggerAlarm(1);
             }
         }
+        try {
+            if (checkTemperature("indoor") < 20){
+                System.out.println("ça caille");
+                heat(22);
+            }else{
+                System.out.println("il fait bon");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public boolean checkPresence() {
         HttpHeaders headers = new HttpHeaders();
@@ -98,6 +116,31 @@ public class AutomanagementApplication implements Runnable {
         // Everytime switch to CLOSED or OPENED for testing purposes
         this.IS_CLOSED = !this.IS_CLOSED;
         return this.IS_CLOSED;
+    }
+
+    public int checkTemperature(String room) throws JSONException{
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        String body = restTemplate.exchange(this.thermometerAPIEndpoint + room, HttpMethod.GET, entity, String.class).getBody();
+
+        JSONObject json = null;
+        try {
+            json = new JSONObject(body);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json.getInt("temperature");
+    }
+
+    public void heat(Integer temperature) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>(temperature.toString(), headers);
+
+        System.out.println(
+                restTemplate.exchange(this.heaterAPIEndpoint + temperature, HttpMethod.POST, entity, String.class).getStatusCode());
     }
 
 }
