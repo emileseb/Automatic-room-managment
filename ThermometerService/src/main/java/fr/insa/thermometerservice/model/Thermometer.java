@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Thermometer {
 
     public static ArrayList<Thermometer> thermometerList = new ArrayList<>();
+    public static ArrayList<String> historyDatabase = new ArrayList<>();
     private String room;
     private int temperature;
 

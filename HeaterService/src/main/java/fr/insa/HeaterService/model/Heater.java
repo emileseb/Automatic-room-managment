@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Heater {
 
 	private static ArrayList<Heater> heaterList= new ArrayList<>();
+	public static ArrayList<String> historyDatabase = new ArrayList<>();
 	private int id;
 	private String room;
 	private boolean status;

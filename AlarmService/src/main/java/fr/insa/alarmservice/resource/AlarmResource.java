@@ -6,12 +6,17 @@ import org.eclipse.om2m.commons.obix.Bool;
 import org.eclipse.om2m.commons.obix.Obj;
 import org.eclipse.om2m.commons.obix.io.ObixDecoder;
 import org.eclipse.om2m.commons.resource.ContentInstance;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Date;
 
 @RestController
 //@RequestMapping("/om2m")
@@ -23,7 +28,25 @@ public class AlarmResource {
     @PostMapping(value = "/alarm/{duration}")
     public String setAlarm(@PathVariable int duration){
         alarm.setStatus(true);
+        Alarm.historyDatabase.add(Alarm.historyDatabase.size(),new Date() + " Alarm " + alarm.getId() + " TRIGGERED for " + duration + " minutes");
         return "Alarm triggered for " + duration + " minutes";
+    }
+
+    @GetMapping(value = "/alarm/history")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String getHistory(){
+        int i = 0;
+        JSONArray history = new JSONArray();
+        for (String entry : Alarm.historyDatabase){
+            JSONObject hist_entry = new JSONObject();
+            try {
+                hist_entry.accumulate("entree", entry);
+                history.put(hist_entry);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return history.toString();
     }
 
     //@GetMapping(value="/alarm/{alarm_id}", produces= MediaType.APPLICATION_JSON_VALUE)

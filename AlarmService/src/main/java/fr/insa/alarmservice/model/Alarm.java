@@ -6,6 +6,8 @@ public class Alarm {
 
     private static ArrayList<Alarm> alarmList= new ArrayList<>();
 
+    public static ArrayList<String> historyDatabase = new ArrayList<>();
+
     private int id;
     private boolean status;
 
