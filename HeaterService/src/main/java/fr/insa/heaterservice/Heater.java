@@ -1,20 +1,21 @@
-package fr.insa.HeaterService;
+package fr.insa.heaterservice;
 
 import java.util.ArrayList;
 
 public class Heater {
 
-	private static ArrayList<Heater> heaterList= new ArrayList<>();
+	public static ArrayList<Heater> heaters = new ArrayList<>();
+
 	private int id;
 	private String room;
 	private boolean status;
 
 	
-	public Heater(){
+	public Heater(String roomName){
 		this.setStatus(false);
-		heaterList.add(this);
-		this.setId(heaterList.indexOf(this));
-		this.setRoom("Salle_1");
+		heaters.add(this);
+		this.setId(heaters.indexOf(this));
+		this.setRoom(roomName);
 	}
 	
 	public int getId (){
@@ -25,13 +26,13 @@ public class Heater {
 		this.id = id;
 	}
 	
-	public boolean isStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 	
 	public void setStatus(boolean status) {
 		this.status = status;
-	}	
+	}
 	
 	public String getRoom(){
 		return room;
