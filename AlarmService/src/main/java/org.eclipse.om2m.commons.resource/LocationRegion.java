@@ -26,23 +26,18 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>
  * Java class for locationRegion complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="locationRegion">
  *   &lt;complexContent>
@@ -69,75 +64,69 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "locationRegion", propOrder = { "countryCode", "circRegion" })
+@XmlType(name = "locationRegion", propOrder = {"countryCode", "circRegion"})
 public class LocationRegion {
 
-	@XmlList
-	protected List<String> countryCode;
-	@XmlList
-	@XmlElement(type = Float.class)
-	protected List<Float> circRegion;
+    @XmlList
+    protected List<String> countryCode;
+    @XmlList
+    @XmlElement(type = Float.class)
+    protected List<Float> circRegion;
 
-	/**
-	 * Gets the value of the countryCode property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the countryCode property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getCountryCode().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getCountryCode() {
-		if (countryCode == null) {
-			countryCode = new ArrayList<String>();
-		}
-		return this.countryCode;
-	}
+    /**
+     * Gets the value of the countryCode property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the countryCode property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getCountryCode().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getCountryCode() {
+        if (countryCode == null) {
+            countryCode = new ArrayList<String>();
+        }
+        return this.countryCode;
+    }
 
-	/**
-	 * Gets the value of the circRegion property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the circRegion property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getCircRegion().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Float }
-	 * 
-	 * 
-	 */
-	public List<Float> getCircRegion() {
-		if (circRegion == null) {
-			circRegion = new ArrayList<Float>();
-		}
-		return this.circRegion;
-	}
+    /**
+     * Gets the value of the circRegion property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the circRegion property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getCircRegion().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Float }
+     */
+    public List<Float> getCircRegion() {
+        if (circRegion == null) {
+            circRegion = new ArrayList<Float>();
+        }
+        return this.circRegion;
+    }
 
 }

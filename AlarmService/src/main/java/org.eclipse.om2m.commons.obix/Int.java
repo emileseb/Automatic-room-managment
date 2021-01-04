@@ -19,23 +19,18 @@
  *******************************************************************************/
 package org.eclipse.om2m.commons.obix;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 /**
  * Int oBIX object.
- * @author Francois Aissaoui
  *
+ * @author Francois Aissaoui
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "int")
 @XmlRootElement
-public class Int extends Obj{
+public class Int extends Obj {
 
     @XmlAttribute(name = "val")
     protected BigInteger val;
@@ -59,165 +54,166 @@ public class Int extends Obj{
     @XmlAttribute(name = "writable")
     protected Boolean writable;
 
-    public Int(){}
-    
-    public Int(String name,int val){
-    	this.name = name ; 
-    	this.val = BigInteger.valueOf(val);
+    public Int() {
     }
 
-	/**
-	 * @return the val
-	 */
-	public BigInteger getVal() {
-		return val;
-	}
+    public Int(String name, int val) {
+        this.name = name;
+        this.val = BigInteger.valueOf(val);
+    }
 
-	/**
-	 * @param val the val to set
-	 */
-	public void setVal(BigInteger val) {
-		this.val = val;
-	}
+    /**
+     * @return the val
+     */
+    public BigInteger getVal() {
+        return val;
+    }
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * @param val the val to set
+     */
+    public void setVal(BigInteger val) {
+        this.val = val;
+    }
 
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * @return the href
-	 */
-	public String getHref() {
-		return href;
-	}
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * @param href the href to set
-	 */
-	public void setHref(String href) {
-		this.href = href;
-	}
+    /**
+     * @return the href
+     */
+    public String getHref() {
+        return href;
+    }
 
-	/**
-	 * @return the _null
-	 */
-	public Boolean get_null() {
-		return _null;
-	}
+    /**
+     * @param href the href to set
+     */
+    public void setHref(String href) {
+        this.href = href;
+    }
 
-	/**
-	 * @param _null the _null to set
-	 */
-	public void set_null(Boolean _null) {
-		this._null = _null;
-	}
+    /**
+     * @return the _null
+     */
+    public Boolean get_null() {
+        return _null;
+    }
 
-	/**
-	 * @return the displayName
-	 */
-	public String getDisplayName() {
-		return displayName;
-	}
+    /**
+     * @param _null the _null to set
+     */
+    public void set_null(Boolean _null) {
+        this._null = _null;
+    }
 
-	/**
-	 * @param displayName the displayName to set
-	 */
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
+    /**
+     * @return the displayName
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
 
-	/**
-	 * @return the display
-	 */
-	public String getDisplay() {
-		return display;
-	}
+    /**
+     * @param displayName the displayName to set
+     */
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
 
-	/**
-	 * @param display the display to set
-	 */
-	public void setDisplay(String display) {
-		this.display = display;
-	}
+    /**
+     * @return the display
+     */
+    public String getDisplay() {
+        return display;
+    }
 
-	/**
-	 * @return the icon
-	 */
-	public String getIcon() {
-		return icon;
-	}
+    /**
+     * @param display the display to set
+     */
+    public void setDisplay(String display) {
+        this.display = display;
+    }
 
-	/**
-	 * @param icon the icon to set
-	 */
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
+    /**
+     * @return the icon
+     */
+    public String getIcon() {
+        return icon;
+    }
 
-	/**
-	 * @return the precision
-	 */
-	public Integer getPrecision() {
-		return precision;
-	}
+    /**
+     * @param icon the icon to set
+     */
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-	/**
-	 * @param precision the precision to set
-	 */
-	public void setPrecision(Integer precision) {
-		this.precision = precision;
-	}
+    /**
+     * @return the precision
+     */
+    public Integer getPrecision() {
+        return precision;
+    }
 
-	/**
-	 * @return the status
-	 */
-	public Status getStatus() {
-		return status;
-	}
+    /**
+     * @param precision the precision to set
+     */
+    public void setPrecision(Integer precision) {
+        this.precision = precision;
+    }
 
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(Status status) {
-		this.status = status;
-	}
+    /**
+     * @return the status
+     */
+    public Status getStatus() {
+        return status;
+    }
 
-	/**
-	 * @return the unit
-	 */
-	public String getUnit() {
-		return unit;
-	}
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
-	/**
-	 * @param unit the unit to set
-	 */
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
+    /**
+     * @return the unit
+     */
+    public String getUnit() {
+        return unit;
+    }
 
-	/**
-	 * @return the writable
-	 */
-	public Boolean getWritable() {
-		return writable;
-	}
+    /**
+     * @param unit the unit to set
+     */
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 
-	/**
-	 * @param writable the writable to set
-	 */
-	public void setWritable(Boolean writable) {
-		this.writable = writable;
-	}
-    
+    /**
+     * @return the writable
+     */
+    public Boolean getWritable() {
+        return writable;
+    }
+
+    /**
+     * @param writable the writable to set
+     */
+    public void setWritable(Boolean writable) {
+        this.writable = writable;
+    }
+
 }

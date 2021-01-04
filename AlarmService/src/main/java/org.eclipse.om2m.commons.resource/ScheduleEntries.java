@@ -26,24 +26,23 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.eclipse.om2m.commons.constants.ShortName;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-
-import org.eclipse.om2m.commons.constants.ShortName;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
  * Java class for scheduleEntries complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="scheduleEntries">
  *   &lt;complexContent>
@@ -55,43 +54,39 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "scheduleEntries")
 public class ScheduleEntries {
 
-	@XmlElement(required = true, name = ShortName.SCHEDULE_ENTRY)
-	protected List<String> scheduleEntry;
+    @XmlElement(required = true, name = ShortName.SCHEDULE_ENTRY)
+    protected List<String> scheduleEntry;
 
-	/**
-	 * Gets the value of the scheduleEntry property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the scheduleEntry property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getScheduleEntry().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getScheduleEntry() {
-		if (scheduleEntry == null) {
-			scheduleEntry = new ArrayList<String>();
-		}
-		return this.scheduleEntry;
-	}
+    /**
+     * Gets the value of the scheduleEntry property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the scheduleEntry property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getScheduleEntry().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getScheduleEntry() {
+        if (scheduleEntry == null) {
+            scheduleEntry = new ArrayList<String>();
+        }
+        return this.scheduleEntry;
+    }
 
 }

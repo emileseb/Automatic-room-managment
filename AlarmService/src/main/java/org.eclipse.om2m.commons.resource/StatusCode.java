@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * 
+ *
  * <pre>
  * &lt;simpleType name="StatusCode">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -62,20 +62,19 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
- *
  */
 @XmlType(name = "StatusCode")
 @XmlEnum
 public enum StatusCode {
 
-	STATUS_OK, STATUS_ACCEPTED, STATUS_BAD_REQUEST, STATUS_PERMISSION_DENIED, STATUS_FORBIDDEN, STATUS_NOT_FOUND, STATUS_METHOD_NOT_ALLOWED, STATUS_NOT_ACCEPTABLE, STATUS_REQUEST_TIMEOUT, STATUS_CONFLICT, STATUS_UNSUPPORTED_MEDIA_TYPE, STATUS_INTERNAL_SERVER_ERROR, STATUS_NOT_IMPLEMENTED, STATUS_BAD_GATEWAY, STATUS_SERVICE_UNAVAILABLE, STATUS_GATEWAY_TIMEOUT, STATUS_DELETED, STATUS_CREATED, STATUS_AUTHORIZATION_NOT_ADDED, STATUS_EXPIRED, STATUS_ALREADY_EXISTS;
+    STATUS_OK, STATUS_ACCEPTED, STATUS_BAD_REQUEST, STATUS_PERMISSION_DENIED, STATUS_FORBIDDEN, STATUS_NOT_FOUND, STATUS_METHOD_NOT_ALLOWED, STATUS_NOT_ACCEPTABLE, STATUS_REQUEST_TIMEOUT, STATUS_CONFLICT, STATUS_UNSUPPORTED_MEDIA_TYPE, STATUS_INTERNAL_SERVER_ERROR, STATUS_NOT_IMPLEMENTED, STATUS_BAD_GATEWAY, STATUS_SERVICE_UNAVAILABLE, STATUS_GATEWAY_TIMEOUT, STATUS_DELETED, STATUS_CREATED, STATUS_AUTHORIZATION_NOT_ADDED, STATUS_EXPIRED, STATUS_ALREADY_EXISTS;
 
-	public String value() {
-		return name();
-	}
+    public static StatusCode fromValue(String v) {
+        return valueOf(v);
+    }
 
-	public static StatusCode fromValue(String v) {
-		return valueOf(v);
-	}
+    public String value() {
+        return name();
+    }
 
 }

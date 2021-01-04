@@ -26,26 +26,19 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -65,87 +58,78 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "applicableEventCategory", "maxBufferSize",
-		"storagePriority" })
+@XmlType(name = "", propOrder = {"applicableEventCategory", "maxBufferSize",
+        "storagePriority"})
 @XmlRootElement(name = "cmdhBuffer")
 public class CmdhBuffer extends MgmtResource {
 
-	@XmlList
-	@XmlElement(required = true)
-	protected List<String> applicableEventCategory;
-	@XmlElement(required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger maxBufferSize;
-	protected int storagePriority;
+    @XmlList
+    @XmlElement(required = true)
+    protected List<String> applicableEventCategory;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger maxBufferSize;
+    protected int storagePriority;
 
-	/**
-	 * Gets the value of the applicableEventCategory property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the applicableEventCategory property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getApplicableEventCategory().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getApplicableEventCategory() {
-		if (applicableEventCategory == null) {
-			applicableEventCategory = new ArrayList<String>();
-		}
-		return this.applicableEventCategory;
-	}
+    /**
+     * Gets the value of the applicableEventCategory property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the applicableEventCategory property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getApplicableEventCategory().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getApplicableEventCategory() {
+        if (applicableEventCategory == null) {
+            applicableEventCategory = new ArrayList<String>();
+        }
+        return this.applicableEventCategory;
+    }
 
-	/**
-	 * Gets the value of the maxBufferSize property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxBufferSize() {
-		return maxBufferSize;
-	}
+    /**
+     * Gets the value of the maxBufferSize property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxBufferSize() {
+        return maxBufferSize;
+    }
 
-	/**
-	 * Sets the value of the maxBufferSize property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxBufferSize(BigInteger value) {
-		this.maxBufferSize = value;
-	}
+    /**
+     * Sets the value of the maxBufferSize property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxBufferSize(BigInteger value) {
+        this.maxBufferSize = value;
+    }
 
-	/**
-	 * Gets the value of the storagePriority property.
-	 * 
-	 */
-	public int getStoragePriority() {
-		return storagePriority;
-	}
+    /**
+     * Gets the value of the storagePriority property.
+     */
+    public int getStoragePriority() {
+        return storagePriority;
+    }
 
-	/**
-	 * Sets the value of the storagePriority property.
-	 * 
-	 */
-	public void setStoragePriority(int value) {
-		this.storagePriority = value;
-	}
+    /**
+     * Sets the value of the storagePriority property.
+     */
+    public void setStoragePriority(int value) {
+        this.storagePriority = value;
+    }
 
 }

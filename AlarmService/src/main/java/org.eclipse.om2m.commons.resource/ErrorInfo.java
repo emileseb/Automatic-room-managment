@@ -26,11 +26,7 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
@@ -52,85 +48,75 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ErrorInfo", propOrder = { "statusCode", "additionalInfo" })
+@XmlType(name = "ErrorInfo", propOrder = {"statusCode", "additionalInfo"})
 public class ErrorInfo {
 
-	@XmlElement(namespace = "http://uri.etsi.org/m2m")
-	protected StatusCode statusCode;
-	@XmlElement(namespace = "http://uri.etsi.org/m2m")
-	protected String additionalInfo;
+    @XmlElement(namespace = "http://uri.etsi.org/m2m")
+    protected StatusCode statusCode;
+    @XmlElement(namespace = "http://uri.etsi.org/m2m")
+    protected String additionalInfo;
 
-	/**
-	 * ErrorInfo Constructor
-	 */
-	public ErrorInfo() {
-		super();
-	}
+    /**
+     * ErrorInfo Constructor
+     */
+    public ErrorInfo() {
+        super();
+    }
 
-	/**
-	 * ErrorInfo Constructor
-	 * 
-	 * @param statusCode
-	 *            - StatusCode of the Error
-	 * @param additionalInfo
-	 *            - Additional information about the error
-	 */
-	public ErrorInfo(StatusCode statusCode, String additionalInfo) {
-		super();
-		this.statusCode = statusCode;
-		this.additionalInfo = additionalInfo;
-	}
+    /**
+     * ErrorInfo Constructor
+     *
+     * @param statusCode     - StatusCode of the Error
+     * @param additionalInfo - Additional information about the error
+     */
+    public ErrorInfo(StatusCode statusCode, String additionalInfo) {
+        super();
+        this.statusCode = statusCode;
+        this.additionalInfo = additionalInfo;
+    }
 
-	/**
-	 * Gets the value of the statusCode property.
-	 *
-	 * @return possible object is {@link StatusCode }
-	 *
-	 */
-	public StatusCode getStatusCode() {
-		return statusCode;
-	}
+    /**
+     * Gets the value of the statusCode property.
+     *
+     * @return possible object is {@link StatusCode }
+     */
+    public StatusCode getStatusCode() {
+        return statusCode;
+    }
 
-	/**
-	 * Sets the value of the statusCode property.
-	 *
-	 * @param value
-	 *            allowed object is {@link StatusCode }
-	 *
-	 */
-	public void setStatusCode(StatusCode value) {
-		this.statusCode = value;
-	}
+    /**
+     * Sets the value of the statusCode property.
+     *
+     * @param value allowed object is {@link StatusCode }
+     */
+    public void setStatusCode(StatusCode value) {
+        this.statusCode = value;
+    }
 
-	/**
-	 * Gets the value of the additionalInfo property.
-	 *
-	 * @return possible object is {@link String }
-	 *
-	 */
-	public String getAdditionalInfo() {
-		return additionalInfo;
-	}
+    /**
+     * Gets the value of the additionalInfo property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
 
-	/**
-	 * Sets the value of the additionalInfo property.
-	 *
-	 * @param value
-	 *            allowed object is {@link String }
-	 *
-	 */
-	public void setAdditionalInfo(String value) {
-		this.additionalInfo = value;
-	}
+    /**
+     * Sets the value of the additionalInfo property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setAdditionalInfo(String value) {
+        this.additionalInfo = value;
+    }
 
-	public String toString() {
-		return "ErrorInfo [statusCode=" + statusCode + ", additionalInfo="
-				+ additionalInfo + "]";
-	}
+    public String toString() {
+        return "ErrorInfo [statusCode=" + statusCode + ", additionalInfo="
+                + additionalInfo + "]";
+    }
 
 }

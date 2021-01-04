@@ -26,26 +26,20 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
-import org.eclipse.om2m.commons.constants.ShortName;
 
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -62,132 +56,121 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.ANI)
 public class AreaNwkInfo extends MgmtResource {
 
-	@XmlElement(name = ShortName.AREA_NWK_TYPE, required = true)
-	protected String areaNwkType;
-	@XmlList
-	@XmlElement(name = ShortName.LIST_DEVICES, required = true)
-	protected List<String> listOfDevices;
-	@XmlElement(name = ShortName.CHILD_RESOURCE)
-	protected List<ChildResourceRef> childResource;
-	@XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols")
-	protected List<Subscription> subscription;
+    @XmlElement(name = ShortName.AREA_NWK_TYPE, required = true)
+    protected String areaNwkType;
+    @XmlList
+    @XmlElement(name = ShortName.LIST_DEVICES, required = true)
+    protected List<String> listOfDevices;
+    @XmlElement(name = ShortName.CHILD_RESOURCE)
+    protected List<ChildResourceRef> childResource;
+    @XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols")
+    protected List<Subscription> subscription;
 
-	/**
-	 * Gets the value of the areaNwkType property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getAreaNwkType() {
-		return areaNwkType;
-	}
+    /**
+     * Gets the value of the areaNwkType property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getAreaNwkType() {
+        return areaNwkType;
+    }
 
-	/**
-	 * Sets the value of the areaNwkType property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setAreaNwkType(String value) {
-		this.areaNwkType = value;
-	}
+    /**
+     * Sets the value of the areaNwkType property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setAreaNwkType(String value) {
+        this.areaNwkType = value;
+    }
 
-	/**
-	 * Gets the value of the listOfDevices property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the listOfDevices property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getListOfDevices().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getListOfDevices() {
-		if (listOfDevices == null) {
-			listOfDevices = new ArrayList<String>();
-		}
-		return this.listOfDevices;
-	}
+    /**
+     * Gets the value of the listOfDevices property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the listOfDevices property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getListOfDevices().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getListOfDevices() {
+        if (listOfDevices == null) {
+            listOfDevices = new ArrayList<String>();
+        }
+        return this.listOfDevices;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the subscription property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the subscription property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getSubscription().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link Subscription }
-	 * 
-	 * 
-	 */
-	public List<Subscription> getSubscription() {
-		if (subscription == null) {
-			subscription = new ArrayList<Subscription>();
-		}
-		return this.subscription;
-	}
+    /**
+     * Gets the value of the subscription property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the subscription property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getSubscription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Subscription }
+     */
+    public List<Subscription> getSubscription() {
+        if (subscription == null) {
+            subscription = new ArrayList<Subscription>();
+        }
+        return this.subscription;
+    }
 
 }

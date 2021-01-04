@@ -26,25 +26,20 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.math.BigInteger;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.Duration;
-
 import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.datatype.Duration;
+import java.math.BigInteger;
 
 /**
  * <p>
  * Java class for rateLimit complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="rateLimit">
  *   &lt;complexContent>
@@ -57,59 +52,51 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = ShortName.RATE_LIMIT)
 public class RateLimit {
 
-	@XmlSchemaType(name = "nonNegativeInteger")
-	@XmlElement(name = ShortName.MAX_NR_OF_NOTIFY)
-	protected BigInteger maxNrOfNotify;
-	@XmlElement(name = ShortName.TIME_WINDOW)
-	protected Duration timeWindow;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlElement(name = ShortName.MAX_NR_OF_NOTIFY)
+    protected BigInteger maxNrOfNotify;
+    @XmlElement(name = ShortName.TIME_WINDOW)
+    protected Duration timeWindow;
 
-	/**
-	 * Gets the value of the maxNrOfNotify property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxNrOfNotify() {
-		return maxNrOfNotify;
-	}
+    /**
+     * Gets the value of the maxNrOfNotify property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxNrOfNotify() {
+        return maxNrOfNotify;
+    }
 
-	/**
-	 * Sets the value of the maxNrOfNotify property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxNrOfNotify(BigInteger value) {
-		this.maxNrOfNotify = value;
-	}
+    /**
+     * Sets the value of the maxNrOfNotify property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxNrOfNotify(BigInteger value) {
+        this.maxNrOfNotify = value;
+    }
 
-	/**
-	 * Gets the value of the timeWindow property.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getTimeWindow() {
-		return timeWindow;
-	}
+    /**
+     * Gets the value of the timeWindow property.
+     *
+     * @return possible object is {@link Duration }
+     */
+    public Duration getTimeWindow() {
+        return timeWindow;
+    }
 
-	/**
-	 * Sets the value of the timeWindow property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setTimeWindow(Duration value) {
-		this.timeWindow = value;
-	}
+    /**
+     * Sets the value of the timeWindow property.
+     *
+     * @param value allowed object is {@link Duration }
+     */
+    public void setTimeWindow(Duration value) {
+        this.timeWindow = value;
+    }
 
 }

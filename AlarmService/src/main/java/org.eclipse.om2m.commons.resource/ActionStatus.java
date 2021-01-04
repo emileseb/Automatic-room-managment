@@ -26,21 +26,20 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.math.BigInteger;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import java.math.BigInteger;
 
 /**
  * <p>
  * Java class for actionStatus complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="actionStatus">
  *   &lt;complexContent>
@@ -53,57 +52,49 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "actionStatus", propOrder = { "action", "status" })
+@XmlType(name = "actionStatus", propOrder = {"action", "status"})
 public class ActionStatus {
 
-	@XmlSchemaType(name = "anyURI")
-	protected String action;
-	protected BigInteger status;
+    @XmlSchemaType(name = "anyURI")
+    protected String action;
+    protected BigInteger status;
 
-	/**
-	 * Gets the value of the action property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getAction() {
-		return action;
-	}
+    /**
+     * Gets the value of the action property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getAction() {
+        return action;
+    }
 
-	/**
-	 * Sets the value of the action property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setAction(String value) {
-		this.action = value;
-	}
+    /**
+     * Sets the value of the action property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setAction(String value) {
+        this.action = value;
+    }
 
-	/**
-	 * Gets the value of the status property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getStatus() {
-		return status;
-	}
+    /**
+     * Gets the value of the status property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getStatus() {
+        return status;
+    }
 
-	/**
-	 * Sets the value of the status property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setStatus(BigInteger value) {
-		this.status = value;
-	}
+    /**
+     * Sets the value of the status property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setStatus(BigInteger value) {
+        this.status = value;
+    }
 
 }

@@ -1,20 +1,10 @@
 package fr.insa.alarmservice.resource;
 
 import fr.insa.alarmservice.model.Alarm;
-import fr.insa.alarmservice.model.Mapper;
-import org.eclipse.om2m.commons.obix.Bool;
-import org.eclipse.om2m.commons.obix.Obj;
-import org.eclipse.om2m.commons.obix.io.ObixDecoder;
-import org.eclipse.om2m.commons.resource.ContentInstance;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 
@@ -26,18 +16,18 @@ public class AlarmResource {
     private Alarm alarm = new Alarm();
 
     @PostMapping(value = "/alarm/{duration}")
-    public String setAlarm(@PathVariable int duration){
+    public String setAlarm(@PathVariable int duration) {
         alarm.setStatus(true);
-        Alarm.historyDatabase.add(Alarm.historyDatabase.size(),new Date() + " Alarm " + alarm.getId() + " TRIGGERED for " + duration + " minutes");
+        Alarm.historyDatabase.add(Alarm.historyDatabase.size(), new Date() + " Alarm " + alarm.getId() + " TRIGGERED for " + duration + " minutes");
         return "Alarm triggered for " + duration + " minutes";
     }
 
     @GetMapping(value = "/alarm/history")
     @CrossOrigin(origins = "http://localhost:3000")
-    public String getHistory(){
+    public String getHistory() {
         int i = 0;
         JSONArray history = new JSONArray();
-        for (String entry : Alarm.historyDatabase){
+        for (String entry : Alarm.historyDatabase) {
             JSONObject hist_entry = new JSONObject();
             try {
                 hist_entry.accumulate("entree", entry);

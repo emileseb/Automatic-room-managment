@@ -26,20 +26,16 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
  * Java class for resourceWrapper complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="resourceWrapper">
  *   &lt;complexContent>
@@ -49,36 +45,31 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "resourceWrapper")
 public class ResourceWrapper extends Resource {
 
-	@XmlAttribute(name = "URI", required = true)
-	@XmlSchemaType(name = "anyURI")
-	protected String uri;
+    @XmlAttribute(name = "URI", required = true)
+    @XmlSchemaType(name = "anyURI")
+    protected String uri;
 
-	/**
-	 * Gets the value of the uri property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getURI() {
-		return uri;
-	}
+    /**
+     * Gets the value of the uri property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getURI() {
+        return uri;
+    }
 
-	/**
-	 * Sets the value of the uri property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setURI(String value) {
-		this.uri = value;
-	}
+    /**
+     * Sets the value of the uri property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setURI(String value) {
+        this.uri = value;
+    }
 
 }

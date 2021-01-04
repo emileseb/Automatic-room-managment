@@ -26,25 +26,19 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.math.BigInteger;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
 import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
+import java.math.BigInteger;
 
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -61,154 +55,134 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.CIN)
 public class ContentInstance extends AnnounceableSubordinateResource {
 
-	@XmlElement(name = ShortName.STATETAG, required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger stateTag;
-	@XmlElement(name = ShortName.CREATOR)
-	protected String creator;
-	@XmlElement(name = ShortName.CONTENT_INFO)
-	protected String contentInfo;
-	@XmlElement(name = ShortName.CONTENT_SIZE, required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger contentSize;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.ONTOLOGY_REF)
-	protected String ontologyRef;
-	@XmlElement(name = ShortName.CONTENT, required = true)
-	protected String content;
+    @XmlElement(name = ShortName.STATETAG, required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger stateTag;
+    @XmlElement(name = ShortName.CREATOR)
+    protected String creator;
+    @XmlElement(name = ShortName.CONTENT_INFO)
+    protected String contentInfo;
+    @XmlElement(name = ShortName.CONTENT_SIZE, required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger contentSize;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.ONTOLOGY_REF)
+    protected String ontologyRef;
+    @XmlElement(name = ShortName.CONTENT, required = true)
+    protected String content;
 
-	/**
-	 * Gets the value of the stateTag property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getStateTag() {
-		return stateTag;
-	}
+    /**
+     * Gets the value of the stateTag property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getStateTag() {
+        return stateTag;
+    }
 
-	/**
-	 * Sets the value of the stateTag property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setStateTag(BigInteger value) {
-		this.stateTag = value;
-	}
+    /**
+     * Sets the value of the stateTag property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setStateTag(BigInteger value) {
+        this.stateTag = value;
+    }
 
-	/**
-	 * Gets the value of the creator property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCreator() {
-		return creator;
-	}
+    /**
+     * Gets the value of the creator property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getCreator() {
+        return creator;
+    }
 
-	/**
-	 * Sets the value of the creator property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCreator(String value) {
-		this.creator = value;
-	}
+    /**
+     * Sets the value of the creator property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setCreator(String value) {
+        this.creator = value;
+    }
 
-	/**
-	 * Gets the value of the contentInfo property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getContentInfo() {
-		return contentInfo;
-	}
+    /**
+     * Gets the value of the contentInfo property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getContentInfo() {
+        return contentInfo;
+    }
 
-	/**
-	 * Sets the value of the contentInfo property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setContentInfo(String value) {
-		this.contentInfo = value;
-	}
+    /**
+     * Sets the value of the contentInfo property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setContentInfo(String value) {
+        this.contentInfo = value;
+    }
 
-	/**
-	 * Gets the value of the contentSize property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getContentSize() {
-		return contentSize;
-	}
+    /**
+     * Gets the value of the contentSize property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getContentSize() {
+        return contentSize;
+    }
 
-	/**
-	 * Sets the value of the contentSize property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setContentSize(BigInteger value) {
-		this.contentSize = value;
-	}
+    /**
+     * Sets the value of the contentSize property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setContentSize(BigInteger value) {
+        this.contentSize = value;
+    }
 
-	/**
-	 * Gets the value of the ontologyRef property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getOntologyRef() {
-		return ontologyRef;
-	}
+    /**
+     * Gets the value of the ontologyRef property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getOntologyRef() {
+        return ontologyRef;
+    }
 
-	/**
-	 * Sets the value of the ontologyRef property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setOntologyRef(String value) {
-		this.ontologyRef = value;
-	}
+    /**
+     * Sets the value of the ontologyRef property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setOntologyRef(String value) {
+        this.ontologyRef = value;
+    }
 
-	/**
-	 * Gets the value of the content property.
-	 * 
-	 * @return possible object is {@link Object }
-	 * 
-	 */
-	public String getContent() {
-		return content;
-	}
+    /**
+     * Gets the value of the content property.
+     *
+     * @return possible object is {@link Object }
+     */
+    public String getContent() {
+        return content;
+    }
 
-	/**
-	 * Sets the value of the content property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Object }
-	 * 
-	 */
-	public void setContent(String value) {
-		this.content = value;
-	}
+    /**
+     * Sets the value of the content property.
+     *
+     * @param value allowed object is {@link Object }
+     */
+    public void setContent(String value) {
+        this.content = value;
+    }
 
 }

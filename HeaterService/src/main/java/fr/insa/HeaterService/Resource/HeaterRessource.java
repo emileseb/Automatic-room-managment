@@ -13,12 +13,6 @@ import java.util.Date;
 public class HeaterRessource {
 	
 	private final Heater device = new Heater();
-	
-	@GetMapping(value="/heater/test")
-	public String test() {
-		Heater.historyDatabase.add(new Date() + " Heater tested");
-		return "test OK";
-	}
 
 	@PostMapping(value="/heater/{temperature}")
 	public String order(@PathVariable int temperature) {

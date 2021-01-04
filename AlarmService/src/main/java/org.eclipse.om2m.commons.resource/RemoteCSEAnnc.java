@@ -26,29 +26,21 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
-import org.eclipse.om2m.commons.constants.ShortName;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -83,242 +75,219 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.CSRA)
 public class RemoteCSEAnnc extends AnnouncedResource {
 
-	@XmlElement(name = ShortName.CSE_TYPE)
-	protected BigInteger cseType;
-	@XmlList
-	@XmlElement(name = ShortName.POA)
-	protected List<String> pointOfAccess;
-	@XmlElement(name = ShortName.CSE_BASE)
-	@XmlSchemaType(name = "anyURI")
-	protected String cseBase;
-	@XmlElement(name = ShortName.CSE_ID)
-	protected String cseid;
-	@XmlElement(name = ShortName.REQUEST_REACHABILITY)
-	protected Boolean requestReachability;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.NODE_LINK)
-	protected String nodeLink;
-	@XmlElement(name = ShortName.CHILD_RESOURCE)
-	protected List<ChildResourceRef> childResource;
-	@XmlElements({
-			@XmlElement(name = "nodeAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = NodeAnnc.class),
-			@XmlElement(name = "AE", namespace = "http://www.onem2m.org/xml/protocols", type = AE.class),
-			@XmlElement(name = "AEAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = AEAnnc.class),
-			@XmlElement(name = "container", namespace = "http://www.onem2m.org/xml/protocols", type = Container.class),
-			@XmlElement(name = "containerAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = ContainerAnnc.class),
-			@XmlElement(name = "group", namespace = "http://www.onem2m.org/xml/protocols", type = Group.class),
-			@XmlElement(name = "groupAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = GroupAnnc.class),
-			@XmlElement(name = "accessControlPolicy", namespace = "http://www.onem2m.org/xml/protocols", type = AccessControlPolicy.class),
-			@XmlElement(name = "accessControlPolicyAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = AccessControlPolicyAnnc.class),
-			@XmlElement(name = "subscription", namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class),
-			@XmlElement(name = "pollingChannel", namespace = "http://www.onem2m.org/xml/protocols", type = PollingChannel.class),
-			@XmlElement(name = "scheduleAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = ScheduleAnnc.class),
-			@XmlElement(name = "locationPolicyAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = LocationPolicyAnnc.class) })
-	protected List<Resource> nodeAnncOrAEOrAEAnnc;
+    @XmlElement(name = ShortName.CSE_TYPE)
+    protected BigInteger cseType;
+    @XmlList
+    @XmlElement(name = ShortName.POA)
+    protected List<String> pointOfAccess;
+    @XmlElement(name = ShortName.CSE_BASE)
+    @XmlSchemaType(name = "anyURI")
+    protected String cseBase;
+    @XmlElement(name = ShortName.CSE_ID)
+    protected String cseid;
+    @XmlElement(name = ShortName.REQUEST_REACHABILITY)
+    protected Boolean requestReachability;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.NODE_LINK)
+    protected String nodeLink;
+    @XmlElement(name = ShortName.CHILD_RESOURCE)
+    protected List<ChildResourceRef> childResource;
+    @XmlElements({
+            @XmlElement(name = "nodeAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = NodeAnnc.class),
+            @XmlElement(name = "AE", namespace = "http://www.onem2m.org/xml/protocols", type = AE.class),
+            @XmlElement(name = "AEAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = AEAnnc.class),
+            @XmlElement(name = "container", namespace = "http://www.onem2m.org/xml/protocols", type = Container.class),
+            @XmlElement(name = "containerAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = ContainerAnnc.class),
+            @XmlElement(name = "group", namespace = "http://www.onem2m.org/xml/protocols", type = Group.class),
+            @XmlElement(name = "groupAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = GroupAnnc.class),
+            @XmlElement(name = "accessControlPolicy", namespace = "http://www.onem2m.org/xml/protocols", type = AccessControlPolicy.class),
+            @XmlElement(name = "accessControlPolicyAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = AccessControlPolicyAnnc.class),
+            @XmlElement(name = "subscription", namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class),
+            @XmlElement(name = "pollingChannel", namespace = "http://www.onem2m.org/xml/protocols", type = PollingChannel.class),
+            @XmlElement(name = "scheduleAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = ScheduleAnnc.class),
+            @XmlElement(name = "locationPolicyAnnc", namespace = "http://www.onem2m.org/xml/protocols", type = LocationPolicyAnnc.class)})
+    protected List<Resource> nodeAnncOrAEOrAEAnnc;
 
-	/**
-	 * Gets the value of the cseType property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getCseType() {
-		return cseType;
-	}
+    /**
+     * Gets the value of the cseType property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getCseType() {
+        return cseType;
+    }
 
-	/**
-	 * Sets the value of the cseType property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setCseType(BigInteger value) {
-		this.cseType = value;
-	}
+    /**
+     * Sets the value of the cseType property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setCseType(BigInteger value) {
+        this.cseType = value;
+    }
 
-	/**
-	 * Gets the value of the pointOfAccess property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the pointOfAccess property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getPointOfAccess().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getPointOfAccess() {
-		if (pointOfAccess == null) {
-			pointOfAccess = new ArrayList<String>();
-		}
-		return this.pointOfAccess;
-	}
+    /**
+     * Gets the value of the pointOfAccess property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the pointOfAccess property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getPointOfAccess().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getPointOfAccess() {
+        if (pointOfAccess == null) {
+            pointOfAccess = new ArrayList<String>();
+        }
+        return this.pointOfAccess;
+    }
 
-	/**
-	 * Gets the value of the cseBase property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCSEBase() {
-		return cseBase;
-	}
+    /**
+     * Gets the value of the cseBase property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getCSEBase() {
+        return cseBase;
+    }
 
-	/**
-	 * Sets the value of the cseBase property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCSEBase(String value) {
-		this.cseBase = value;
-	}
+    /**
+     * Sets the value of the cseBase property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setCSEBase(String value) {
+        this.cseBase = value;
+    }
 
-	/**
-	 * Gets the value of the cseid property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCSEID() {
-		return cseid;
-	}
+    /**
+     * Gets the value of the cseid property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getCSEID() {
+        return cseid;
+    }
 
-	/**
-	 * Sets the value of the cseid property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCSEID(String value) {
-		this.cseid = value;
-	}
+    /**
+     * Sets the value of the cseid property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setCSEID(String value) {
+        this.cseid = value;
+    }
 
-	/**
-	 * Gets the value of the requestReachability property.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isRequestReachability() {
-		return requestReachability;
-	}
+    /**
+     * Gets the value of the requestReachability property.
+     *
+     * @return possible object is {@link Boolean }
+     */
+    public Boolean isRequestReachability() {
+        return requestReachability;
+    }
 
-	/**
-	 * Sets the value of the requestReachability property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setRequestReachability(Boolean value) {
-		this.requestReachability = value;
-	}
+    /**
+     * Sets the value of the requestReachability property.
+     *
+     * @param value allowed object is {@link Boolean }
+     */
+    public void setRequestReachability(Boolean value) {
+        this.requestReachability = value;
+    }
 
-	/**
-	 * Gets the value of the nodeLink property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getNodeLink() {
-		return nodeLink;
-	}
+    /**
+     * Gets the value of the nodeLink property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getNodeLink() {
+        return nodeLink;
+    }
 
-	/**
-	 * Sets the value of the nodeLink property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setNodeLink(String value) {
-		this.nodeLink = value;
-	}
+    /**
+     * Sets the value of the nodeLink property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setNodeLink(String value) {
+        this.nodeLink = value;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the nodeAnncOrAEOrAEAnnc property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the nodeAnncOrAEOrAEAnnc property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getNodeAnncOrAEOrAEAnnc().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link NodeAnnc }
-	 * {@link AE } {@link AEAnnc } {@link Container } {@link ContainerAnnc }
-	 * {@link Group } {@link GroupAnnc } {@link AccessControlPolicy }
-	 * {@link AccessControlPolicyAnnc } {@link Subscription }
-	 * {@link PollingChannel } {@link ScheduleAnnc } {@link LocationPolicyAnnc }
-	 * 
-	 * 
-	 */
-	public List<Resource> getNodeAnncOrAEOrAEAnnc() {
-		if (nodeAnncOrAEOrAEAnnc == null) {
-			nodeAnncOrAEOrAEAnnc = new ArrayList<Resource>();
-		}
-		return this.nodeAnncOrAEOrAEAnnc;
-	}
+    /**
+     * Gets the value of the nodeAnncOrAEOrAEAnnc property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the nodeAnncOrAEOrAEAnnc property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getNodeAnncOrAEOrAEAnnc().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link NodeAnnc }
+     * {@link AE } {@link AEAnnc } {@link Container } {@link ContainerAnnc }
+     * {@link Group } {@link GroupAnnc } {@link AccessControlPolicy }
+     * {@link AccessControlPolicyAnnc } {@link Subscription }
+     * {@link PollingChannel } {@link ScheduleAnnc } {@link LocationPolicyAnnc }
+     */
+    public List<Resource> getNodeAnncOrAEOrAEAnnc() {
+        if (nodeAnncOrAEOrAEAnnc == null) {
+            nodeAnncOrAEOrAEAnnc = new ArrayList<Resource>();
+        }
+        return this.nodeAnncOrAEOrAEAnnc;
+    }
 
 }

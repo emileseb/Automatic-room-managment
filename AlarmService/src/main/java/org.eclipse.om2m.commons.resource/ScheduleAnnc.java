@@ -34,11 +34,11 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -50,35 +50,30 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "scheduleElement" })
+@XmlType(name = "", propOrder = {"scheduleElement"})
 @XmlRootElement(name = "scheduleAnnc")
 public class ScheduleAnnc extends AnnouncedSubordinateResource {
 
-	protected ScheduleEntries scheduleElement;
+    protected ScheduleEntries scheduleElement;
 
-	/**
-	 * Gets the value of the scheduleElement property.
-	 * 
-	 * @return possible object is {@link ScheduleEntries }
-	 * 
-	 */
-	public ScheduleEntries getScheduleElement() {
-		return scheduleElement;
-	}
+    /**
+     * Gets the value of the scheduleElement property.
+     *
+     * @return possible object is {@link ScheduleEntries }
+     */
+    public ScheduleEntries getScheduleElement() {
+        return scheduleElement;
+    }
 
-	/**
-	 * Sets the value of the scheduleElement property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ScheduleEntries }
-	 * 
-	 */
-	public void setScheduleElement(ScheduleEntries value) {
-		this.scheduleElement = value;
-	}
+    /**
+     * Sets the value of the scheduleElement property.
+     *
+     * @param value allowed object is {@link ScheduleEntries }
+     */
+    public void setScheduleElement(ScheduleEntries value) {
+        this.scheduleElement = value;
+    }
 
 }
