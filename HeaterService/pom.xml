@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.insa</groupId>
-	<artifactId>HeaterService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>heaterservice</artifactId>
+	<version>alpha</version>
 	<name>HeaterService</name>
 	<description>Change status heater</description>
 

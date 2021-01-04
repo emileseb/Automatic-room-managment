@@ -17,5 +17,7 @@
         <module>AutoManagement</module>
         <module>AlarmService</module>
         <module>PresenceManagement</module>
+        <module>ThermometerService</module>
+        <module>HeaterService</module>
     </modules>
 </project>
