@@ -1,21 +1,27 @@
-.DEFAULT_GOAL := cleanrun
+.DEFAULT_GOAL := run
 
-build: AutoManagement AlarmService PresenceManagement
-	mvn -f AutoManagement/pom.xml package
-	mvn -f AlarmService/pom.xml package
-	mvn -f PresenceManagement/pom.xml package
+build: AutoManagement AlarmService PresenceManagement ThermometerService webinterface
+	mvn compile
+	npm install --prefix ./webinterface
 
-run:
-	java -jar PresenceManagement/target/presencemanagement-alpha.jar &
-	java -jar AlarmService/target/alarmservice-alpha.jar &
-	sleep 3
-	java -jar AutoManagement/target/automanagement-alpha.jar
+
+test:
+	mvn test
+
 
 killall:
 	-lsof -t -i:8001 | xargs kill
 	-lsof -t -i:8002 | xargs kill
+	-lsof -t -i:8003 | xargs kill
+	-lsof -t -i:8004 | xargs kill
+	-lsof -t -i:3000 | xargs kill
 
-cleanrun:
+
+run:
 	make killall
-	make run
-
+	mvn spring-boot:run -f AlarmService/pom.xml &
+	mvn spring-boot:run -f HeaterService/pom.xml &
+	mvn spring-boot:run -f PresenceManagement/pom.xml &
+	mvn spring-boot:run -f ThermometerService/pom.xml &
+	mvn spring-boot:run -f AutoManagement/pom.xml &
+	npm run --prefix ./webinterface start

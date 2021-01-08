@@ -40,15 +40,19 @@ there are presence activities from 22h, an alarm must be triggered.
 | Thermometer | 8003        |
 | Heater      | 8004        |
 
-## Running the services
-
+## Usage
+### Compile
+`make build`
+### Test
+`make test`
+### Run
 `make run`
 
 ## Service Spec
 
 ### Alarm
 
-When recieving a POST request on /alarm/{duration} triggers the alarm for {duration} minutes Return a String Warning
+When receiving a POST request on /alarm/{duration} triggers the alarm for {duration} minutes Return a String Warning
 that the alarm has been triggered
 
 ### Presence
