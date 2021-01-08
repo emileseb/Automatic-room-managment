@@ -41,11 +41,11 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -61,149 +61,134 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "targetNetwork", "minReqVolume",
-		"backOffParameters", "otherConditions", "mgmtLink" })
+@XmlType(name = "", propOrder = {"targetNetwork", "minReqVolume",
+        "backOffParameters", "otherConditions", "mgmtLink"})
 @XmlRootElement(name = "cmdhNwAccessRule")
 public class CmdhNwAccessRule extends MgmtResource {
 
-	@XmlList
-	@XmlElement(required = true)
-	protected List<String> targetNetwork;
-	@XmlElement(required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger minReqVolume;
-	@XmlList
-	@XmlElement(required = true)
-	protected List<BigInteger> backOffParameters;
-	@XmlElement(required = true)
-	protected Object otherConditions;
-	@XmlElement(required = true)
-	protected MgmtLinkRef mgmtLink;
+    @XmlList
+    @XmlElement(required = true)
+    protected List<String> targetNetwork;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger minReqVolume;
+    @XmlList
+    @XmlElement(required = true)
+    protected List<BigInteger> backOffParameters;
+    @XmlElement(required = true)
+    protected Object otherConditions;
+    @XmlElement(required = true)
+    protected MgmtLinkRef mgmtLink;
 
-	/**
-	 * Gets the value of the targetNetwork property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the targetNetwork property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getTargetNetwork().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getTargetNetwork() {
-		if (targetNetwork == null) {
-			targetNetwork = new ArrayList<String>();
-		}
-		return this.targetNetwork;
-	}
+    /**
+     * Gets the value of the targetNetwork property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the targetNetwork property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getTargetNetwork().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getTargetNetwork() {
+        if (targetNetwork == null) {
+            targetNetwork = new ArrayList<String>();
+        }
+        return this.targetNetwork;
+    }
 
-	/**
-	 * Gets the value of the minReqVolume property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMinReqVolume() {
-		return minReqVolume;
-	}
+    /**
+     * Gets the value of the minReqVolume property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMinReqVolume() {
+        return minReqVolume;
+    }
 
-	/**
-	 * Sets the value of the minReqVolume property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMinReqVolume(BigInteger value) {
-		this.minReqVolume = value;
-	}
+    /**
+     * Sets the value of the minReqVolume property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMinReqVolume(BigInteger value) {
+        this.minReqVolume = value;
+    }
 
-	/**
-	 * Gets the value of the backOffParameters property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the backOffParameters property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getBackOffParameters().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link BigInteger }
-	 * 
-	 * 
-	 */
-	public List<BigInteger> getBackOffParameters() {
-		if (backOffParameters == null) {
-			backOffParameters = new ArrayList<BigInteger>();
-		}
-		return this.backOffParameters;
-	}
+    /**
+     * Gets the value of the backOffParameters property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the backOffParameters property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getBackOffParameters().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BigInteger }
+     */
+    public List<BigInteger> getBackOffParameters() {
+        if (backOffParameters == null) {
+            backOffParameters = new ArrayList<BigInteger>();
+        }
+        return this.backOffParameters;
+    }
 
-	/**
-	 * Gets the value of the otherConditions property.
-	 * 
-	 * @return possible object is {@link Object }
-	 * 
-	 */
-	public Object getOtherConditions() {
-		return otherConditions;
-	}
+    /**
+     * Gets the value of the otherConditions property.
+     *
+     * @return possible object is {@link Object }
+     */
+    public Object getOtherConditions() {
+        return otherConditions;
+    }
 
-	/**
-	 * Sets the value of the otherConditions property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Object }
-	 * 
-	 */
-	public void setOtherConditions(Object value) {
-		this.otherConditions = value;
-	}
+    /**
+     * Sets the value of the otherConditions property.
+     *
+     * @param value allowed object is {@link Object }
+     */
+    public void setOtherConditions(Object value) {
+        this.otherConditions = value;
+    }
 
-	/**
-	 * Gets the value of the mgmtLink property.
-	 * 
-	 * @return possible object is {@link MgmtLinkRef }
-	 * 
-	 */
-	public MgmtLinkRef getMgmtLink() {
-		return mgmtLink;
-	}
+    /**
+     * Gets the value of the mgmtLink property.
+     *
+     * @return possible object is {@link MgmtLinkRef }
+     */
+    public MgmtLinkRef getMgmtLink() {
+        return mgmtLink;
+    }
 
-	/**
-	 * Sets the value of the mgmtLink property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link MgmtLinkRef }
-	 * 
-	 */
-	public void setMgmtLink(MgmtLinkRef value) {
-		this.mgmtLink = value;
-	}
+    /**
+     * Sets the value of the mgmtLink property.
+     *
+     * @param value allowed object is {@link MgmtLinkRef }
+     */
+    public void setMgmtLink(MgmtLinkRef value) {
+        this.mgmtLink = value;
+    }
 
 }

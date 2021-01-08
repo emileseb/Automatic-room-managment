@@ -26,23 +26,18 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
 import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -54,37 +49,32 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "pollingChannelURI" })
+@XmlType(name = "", propOrder = {"pollingChannelURI"})
 @XmlRootElement(name = ShortName.PCH)
 public class PollingChannel extends RegularResource {
 
-	@XmlElement(required = true, name= ShortName.POLLING_CHANNEL_URI)
-	@XmlSchemaType(name = "anyURI")
-	protected String pollingChannelURI;
+    @XmlElement(required = true, name = ShortName.POLLING_CHANNEL_URI)
+    @XmlSchemaType(name = "anyURI")
+    protected String pollingChannelURI;
 
-	/**
-	 * Gets the value of the pollingChannelURI property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getPollingChannelURI() {
-		return pollingChannelURI;
-	}
+    /**
+     * Gets the value of the pollingChannelURI property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getPollingChannelURI() {
+        return pollingChannelURI;
+    }
 
-	/**
-	 * Sets the value of the pollingChannelURI property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setPollingChannelURI(String value) {
-		this.pollingChannelURI = value;
-	}
+    /**
+     * Sets the value of the pollingChannelURI property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setPollingChannelURI(String value) {
+        this.pollingChannelURI = value;
+    }
 
 }

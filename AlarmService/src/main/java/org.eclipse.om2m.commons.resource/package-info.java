@@ -24,8 +24,8 @@
 // Generated on: 2015.04.15 at 03:56:27 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.onem2m.org/xml/protocols", 
-xmlns = { @javax.xml.bind.annotation.XmlNs(namespaceURI = "http://www.onem2m.org/xml/protocols", prefix = "m2m") }, 
-elementFormDefault = javax.xml.bind.annotation.XmlNsForm.UNQUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.onem2m.org/xml/protocols",
+        xmlns = {@javax.xml.bind.annotation.XmlNs(namespaceURI = "http://www.onem2m.org/xml/protocols", prefix = "m2m")},
+        elementFormDefault = javax.xml.bind.annotation.XmlNsForm.UNQUALIFIED)
 package org.eclipse.om2m.commons.resource;
 

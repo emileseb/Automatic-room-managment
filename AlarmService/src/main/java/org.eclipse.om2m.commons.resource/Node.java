@@ -26,28 +26,22 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.eclipse.om2m.commons.constants.ShortName;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.eclipse.om2m.commons.constants.ShortName;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -78,140 +72,128 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.NODE)
 public class Node extends AnnounceableResource {
 
-	@XmlElement(required = true, name = ShortName.NODE_ID)
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	protected String nodeID;
-	@XmlElement(name = ShortName.HOSTED_CSE_LINK)
-	protected String hostedCSELink;
-	@XmlElement(name = ShortName.CHILD_RESOURCE)
-	protected List<ChildResourceRef> childResource;
-	@XmlElements({
-			@XmlElement(name = ShortName.MEMORY, namespace = "http://www.onem2m.org/xml/protocols", type = Memory.class),
-			@XmlElement(name = ShortName.BATTERY, namespace = "http://www.onem2m.org/xml/protocols", type = Battery.class),
-			@XmlElement(name = ShortName.ANI, namespace = "http://www.onem2m.org/xml/protocols", type = AreaNwkInfo.class),
-			@XmlElement(name = ShortName.ANDI, namespace = "http://www.onem2m.org/xml/protocols", type = AreaNwkDeviceInfo.class),
-			@XmlElement(name = ShortName.FIRMWARE, namespace = "http://www.onem2m.org/xml/protocols", type = Firmware.class),
-			@XmlElement(name = ShortName.SOFTWARE, namespace = "http://www.onem2m.org/xml/protocols", type = Software.class),
-			@XmlElement(name = ShortName.DEVICE_INFO, namespace = "http://www.onem2m.org/xml/protocols", type = DeviceInfo.class),
-			@XmlElement(name = ShortName.DEVICE_CAPABILITY, namespace = "http://www.onem2m.org/xml/protocols", type = DeviceCapability.class),
-			@XmlElement(name = ShortName.REBOOT, namespace = "http://www.onem2m.org/xml/protocols", type = Reboot.class),
-			@XmlElement(name = ShortName.EVENT_LOG, namespace = "http://www.onem2m.org/xml/protocols", type = EventLog.class),
-			@XmlElement(name = ShortName.CMDH_POLICY, namespace = "http://www.onem2m.org/xml/protocols", type = CmdhPolicy.class),
-			@XmlElement(name = ShortName.ACTIVE_CMDH_POLICY, namespace = "http://www.onem2m.org/xml/protocols", type = ActiveCmdhPolicy.class),
-			@XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class) })
-	protected List<RegularResource> memoryOrBatteryOrAreaNwkInfo;
+    @XmlElement(required = true, name = ShortName.NODE_ID)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    protected String nodeID;
+    @XmlElement(name = ShortName.HOSTED_CSE_LINK)
+    protected String hostedCSELink;
+    @XmlElement(name = ShortName.CHILD_RESOURCE)
+    protected List<ChildResourceRef> childResource;
+    @XmlElements({
+            @XmlElement(name = ShortName.MEMORY, namespace = "http://www.onem2m.org/xml/protocols", type = Memory.class),
+            @XmlElement(name = ShortName.BATTERY, namespace = "http://www.onem2m.org/xml/protocols", type = Battery.class),
+            @XmlElement(name = ShortName.ANI, namespace = "http://www.onem2m.org/xml/protocols", type = AreaNwkInfo.class),
+            @XmlElement(name = ShortName.ANDI, namespace = "http://www.onem2m.org/xml/protocols", type = AreaNwkDeviceInfo.class),
+            @XmlElement(name = ShortName.FIRMWARE, namespace = "http://www.onem2m.org/xml/protocols", type = Firmware.class),
+            @XmlElement(name = ShortName.SOFTWARE, namespace = "http://www.onem2m.org/xml/protocols", type = Software.class),
+            @XmlElement(name = ShortName.DEVICE_INFO, namespace = "http://www.onem2m.org/xml/protocols", type = DeviceInfo.class),
+            @XmlElement(name = ShortName.DEVICE_CAPABILITY, namespace = "http://www.onem2m.org/xml/protocols", type = DeviceCapability.class),
+            @XmlElement(name = ShortName.REBOOT, namespace = "http://www.onem2m.org/xml/protocols", type = Reboot.class),
+            @XmlElement(name = ShortName.EVENT_LOG, namespace = "http://www.onem2m.org/xml/protocols", type = EventLog.class),
+            @XmlElement(name = ShortName.CMDH_POLICY, namespace = "http://www.onem2m.org/xml/protocols", type = CmdhPolicy.class),
+            @XmlElement(name = ShortName.ACTIVE_CMDH_POLICY, namespace = "http://www.onem2m.org/xml/protocols", type = ActiveCmdhPolicy.class),
+            @XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class)})
+    protected List<RegularResource> memoryOrBatteryOrAreaNwkInfo;
 
-	/**
-	 * Gets the value of the nodeID property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getNodeID() {
-		return nodeID;
-	}
+    /**
+     * Gets the value of the nodeID property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getNodeID() {
+        return nodeID;
+    }
 
-	/**
-	 * Sets the value of the nodeID property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setNodeID(String value) {
-		this.nodeID = value;
-	}
+    /**
+     * Sets the value of the nodeID property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setNodeID(String value) {
+        this.nodeID = value;
+    }
 
-	/**
-	 * Gets the value of the hostedCSELink property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getHostedCSELink() {
-		return hostedCSELink;
-	}
+    /**
+     * Gets the value of the hostedCSELink property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getHostedCSELink() {
+        return hostedCSELink;
+    }
 
-	/**
-	 * Sets the value of the hostedCSELink property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setHostedCSELink(String value) {
-		this.hostedCSELink = value;
-	}
+    /**
+     * Sets the value of the hostedCSELink property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setHostedCSELink(String value) {
+        this.hostedCSELink = value;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the memoryOrBatteryOrAreaNwkInfo property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the memoryOrBatteryOrAreaNwkInfo property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getMemoryOrBatteryOrAreaNwkInfo().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Memory }
-	 * {@link Battery } {@link AreaNwkInfo } {@link AreaNwkDeviceInfo }
-	 * {@link Firmware } {@link Software } {@link DeviceInfo }
-	 * {@link DeviceCapability } {@link Reboot } {@link EventLog }
-	 * {@link CmdhPolicy } {@link ActiveCmdhPolicy } {@link Subscription }
-	 * 
-	 * 
-	 */
-	public List<RegularResource> getMemoryOrBatteryOrAreaNwkInfo() {
-		if (memoryOrBatteryOrAreaNwkInfo == null) {
-			memoryOrBatteryOrAreaNwkInfo = new ArrayList<RegularResource>();
-		}
-		return this.memoryOrBatteryOrAreaNwkInfo;
-	}
+    /**
+     * Gets the value of the memoryOrBatteryOrAreaNwkInfo property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the memoryOrBatteryOrAreaNwkInfo property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getMemoryOrBatteryOrAreaNwkInfo().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Memory }
+     * {@link Battery } {@link AreaNwkInfo } {@link AreaNwkDeviceInfo }
+     * {@link Firmware } {@link Software } {@link DeviceInfo }
+     * {@link DeviceCapability } {@link Reboot } {@link EventLog }
+     * {@link CmdhPolicy } {@link ActiveCmdhPolicy } {@link Subscription }
+     */
+    public List<RegularResource> getMemoryOrBatteryOrAreaNwkInfo() {
+        if (memoryOrBatteryOrAreaNwkInfo == null) {
+            memoryOrBatteryOrAreaNwkInfo = new ArrayList<RegularResource>();
+        }
+        return this.memoryOrBatteryOrAreaNwkInfo;
+    }
 
 }

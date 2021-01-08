@@ -26,28 +26,21 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
-import org.eclipse.om2m.commons.constants.ShortName;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -77,328 +70,296 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.CNT)
 public class Container extends AnnounceableResource {
 
-	@XmlElement(name = ShortName.STATETAG, required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger stateTag;
-	@XmlElement(name = ShortName.CREATOR, required = true)
-	protected String creator;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	@XmlElement(name = ShortName.MAX_NR_OF_INSTANCES)
-	protected BigInteger maxNrOfInstances;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	@XmlElement(name = ShortName.MAX_BYTE_SIZE)
-	protected BigInteger maxByteSize;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	@XmlElement(name = ShortName.MAX_INSTANCE_AGE)
-	protected BigInteger maxInstanceAge;
-	@XmlElement(name = ShortName.CURRENT_NUMBER_OF_INSTANCES, required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger currentNrOfInstances;
-	@XmlElement(name = ShortName.CURRENT_BYTE_SIZE, required = true)
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger currentByteSize;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.LOCATION_ID)
-	protected String locationID;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.ONTOLOGY_REF)
-	protected String ontologyRef;
-	@XmlElement(name = ShortName.CHILD_RESOURCE)
-	protected List<ChildResourceRef> childResource;
-	@XmlElements({
-			@XmlElement(name = ShortName.CIN, namespace = "http://www.onem2m.org/xml/protocols", type = ContentInstance.class),
-			@XmlElement(name = ShortName.CNT, namespace = "http://www.onem2m.org/xml/protocols", type = Container.class),
-			@XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class) })
-	protected List<Resource> contentInstanceOrContainerOrSubscription;
-	@XmlElement(name = ShortName.OLDEST)
-	protected String oldest;
-	@XmlElement(name = ShortName.LATEST)
-	protected String latest;
-	/**
-	 * Gets the value of the stateTag property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getStateTag() {
-		return stateTag;
-	}
+    @XmlElement(name = ShortName.STATETAG, required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger stateTag;
+    @XmlElement(name = ShortName.CREATOR, required = true)
+    protected String creator;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlElement(name = ShortName.MAX_NR_OF_INSTANCES)
+    protected BigInteger maxNrOfInstances;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlElement(name = ShortName.MAX_BYTE_SIZE)
+    protected BigInteger maxByteSize;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlElement(name = ShortName.MAX_INSTANCE_AGE)
+    protected BigInteger maxInstanceAge;
+    @XmlElement(name = ShortName.CURRENT_NUMBER_OF_INSTANCES, required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger currentNrOfInstances;
+    @XmlElement(name = ShortName.CURRENT_BYTE_SIZE, required = true)
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger currentByteSize;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.LOCATION_ID)
+    protected String locationID;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.ONTOLOGY_REF)
+    protected String ontologyRef;
+    @XmlElement(name = ShortName.CHILD_RESOURCE)
+    protected List<ChildResourceRef> childResource;
+    @XmlElements({
+            @XmlElement(name = ShortName.CIN, namespace = "http://www.onem2m.org/xml/protocols", type = ContentInstance.class),
+            @XmlElement(name = ShortName.CNT, namespace = "http://www.onem2m.org/xml/protocols", type = Container.class),
+            @XmlElement(name = ShortName.SUB, namespace = "http://www.onem2m.org/xml/protocols", type = Subscription.class)})
+    protected List<Resource> contentInstanceOrContainerOrSubscription;
+    @XmlElement(name = ShortName.OLDEST)
+    protected String oldest;
+    @XmlElement(name = ShortName.LATEST)
+    protected String latest;
 
-	/**
-	 * Sets the value of the stateTag property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setStateTag(BigInteger value) {
-		this.stateTag = value;
-	}
+    /**
+     * Gets the value of the stateTag property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getStateTag() {
+        return stateTag;
+    }
 
-	/**
-	 * Gets the value of the creator property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCreator() {
-		return creator;
-	}
+    /**
+     * Sets the value of the stateTag property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setStateTag(BigInteger value) {
+        this.stateTag = value;
+    }
 
-	/**
-	 * Sets the value of the creator property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCreator(String value) {
-		this.creator = value;
-	}
+    /**
+     * Gets the value of the creator property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getCreator() {
+        return creator;
+    }
 
-	/**
-	 * Gets the value of the maxNrOfInstances property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxNrOfInstances() {
-		return maxNrOfInstances;
-	}
+    /**
+     * Sets the value of the creator property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setCreator(String value) {
+        this.creator = value;
+    }
 
-	/**
-	 * Sets the value of the maxNrOfInstances property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxNrOfInstances(BigInteger value) {
-		this.maxNrOfInstances = value;
-	}
+    /**
+     * Gets the value of the maxNrOfInstances property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxNrOfInstances() {
+        return maxNrOfInstances;
+    }
 
-	/**
-	 * Gets the value of the maxByteSize property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxByteSize() {
-		return maxByteSize;
-	}
+    /**
+     * Sets the value of the maxNrOfInstances property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxNrOfInstances(BigInteger value) {
+        this.maxNrOfInstances = value;
+    }
 
-	/**
-	 * Sets the value of the maxByteSize property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxByteSize(BigInteger value) {
-		this.maxByteSize = value;
-	}
+    /**
+     * Gets the value of the maxByteSize property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxByteSize() {
+        return maxByteSize;
+    }
 
-	/**
-	 * Gets the value of the maxInstanceAge property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxInstanceAge() {
-		return maxInstanceAge;
-	}
+    /**
+     * Sets the value of the maxByteSize property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxByteSize(BigInteger value) {
+        this.maxByteSize = value;
+    }
 
-	/**
-	 * Sets the value of the maxInstanceAge property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxInstanceAge(BigInteger value) {
-		this.maxInstanceAge = value;
-	}
+    /**
+     * Gets the value of the maxInstanceAge property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxInstanceAge() {
+        return maxInstanceAge;
+    }
 
-	/**
-	 * Gets the value of the currentNrOfInstances property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getCurrentNrOfInstances() {
-		return currentNrOfInstances;
-	}
+    /**
+     * Sets the value of the maxInstanceAge property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxInstanceAge(BigInteger value) {
+        this.maxInstanceAge = value;
+    }
 
-	/**
-	 * Sets the value of the currentNrOfInstances property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setCurrentNrOfInstances(BigInteger value) {
-		this.currentNrOfInstances = value;
-	}
+    /**
+     * Gets the value of the currentNrOfInstances property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getCurrentNrOfInstances() {
+        return currentNrOfInstances;
+    }
 
-	/**
-	 * Gets the value of the currentByteSize property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getCurrentByteSize() {
-		return currentByteSize;
-	}
+    /**
+     * Sets the value of the currentNrOfInstances property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setCurrentNrOfInstances(BigInteger value) {
+        this.currentNrOfInstances = value;
+    }
 
-	/**
-	 * Sets the value of the currentByteSize property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setCurrentByteSize(BigInteger value) {
-		this.currentByteSize = value;
-	}
+    /**
+     * Gets the value of the currentByteSize property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getCurrentByteSize() {
+        return currentByteSize;
+    }
 
-	/**
-	 * Gets the value of the locationID property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getLocationID() {
-		return locationID;
-	}
+    /**
+     * Sets the value of the currentByteSize property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setCurrentByteSize(BigInteger value) {
+        this.currentByteSize = value;
+    }
 
-	/**
-	 * Sets the value of the locationID property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setLocationID(String value) {
-		this.locationID = value;
-	}
+    /**
+     * Gets the value of the locationID property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getLocationID() {
+        return locationID;
+    }
 
-	/**
-	 * Gets the value of the ontologyRef property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getOntologyRef() {
-		return ontologyRef;
-	}
+    /**
+     * Sets the value of the locationID property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setLocationID(String value) {
+        this.locationID = value;
+    }
 
-	/**
-	 * Sets the value of the ontologyRef property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setOntologyRef(String value) {
-		this.ontologyRef = value;
-	}
+    /**
+     * Gets the value of the ontologyRef property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getOntologyRef() {
+        return ontologyRef;
+    }
+
+    /**
+     * Sets the value of the ontologyRef property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setOntologyRef(String value) {
+        this.ontologyRef = value;
+    }
 
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the contentInstanceOrContainerOrSubscription property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the contentInstanceOrContainerOrSubscription
-	 * property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getContentInstanceOrContainerOrSubscription().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ContentInstance } {@link Container } {@link Subscription }
-	 * 
-	 * 
-	 */
-	public List<Resource> getContentInstanceOrContainerOrSubscription() {
-		if (contentInstanceOrContainerOrSubscription == null) {
-			contentInstanceOrContainerOrSubscription = new ArrayList<Resource>();
-		}
-		return this.contentInstanceOrContainerOrSubscription;
-	}
+    /**
+     * Gets the value of the contentInstanceOrContainerOrSubscription property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the contentInstanceOrContainerOrSubscription
+     * property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getContentInstanceOrContainerOrSubscription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ContentInstance } {@link Container } {@link Subscription }
+     */
+    public List<Resource> getContentInstanceOrContainerOrSubscription() {
+        if (contentInstanceOrContainerOrSubscription == null) {
+            contentInstanceOrContainerOrSubscription = new ArrayList<Resource>();
+        }
+        return this.contentInstanceOrContainerOrSubscription;
+    }
 
-	/**
-	 * @return the oldest
-	 */
-	public String getOldest() {
-		return oldest;
-	}
+    /**
+     * @return the oldest
+     */
+    public String getOldest() {
+        return oldest;
+    }
 
-	/**
-	 * @param oldest the oldest to set
-	 */
-	public void setOldest(String oldest) {
-		this.oldest = oldest;
-	}
+    /**
+     * @param oldest the oldest to set
+     */
+    public void setOldest(String oldest) {
+        this.oldest = oldest;
+    }
 
-	/**
-	 * @return the latest
-	 */
-	public String getLatest() {
-		return latest;
-	}
+    /**
+     * @return the latest
+     */
+    public String getLatest() {
+        return latest;
+    }
 
-	/**
-	 * @param latest the latest to set
-	 */
-	public void setLatest(String latest) {
-		this.latest = latest;
-	}
-	
+    /**
+     * @param latest the latest to set
+     */
+    public void setLatest(String latest) {
+        this.latest = latest;
+    }
+
 }

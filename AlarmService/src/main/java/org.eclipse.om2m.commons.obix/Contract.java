@@ -25,156 +25,155 @@ import java.util.StringTokenizer;
 
 /**
  * Contract oBIX object.
- * 
- * @author Francois
  *
+ * @author Francois
  */
 public class Contract {
-	
-	/**
-	 * Default constructor.
-	 */
-	public Contract() {	}
 
-	/**
-	 * Construct from a space separated list.
-	 */
-	public Contract(String list) {
-		this(parse(list));
-		this.string = list;
-	}
+    static final Contract OBJ = new Contract("obix:obj");
+    Uri[] list;
+    String string;
 
-	/**
-	 * Construct from string list.
-	 */
-	public Contract(String[] list) {
-		this.list = new Uri[list.length];
-		for (int i = 0; i < list.length; ++i) {
-			Uri uri = new Uri();
-			uri.setVal(list[i]);
-			this.list[i] = uri;
-		}
-	}
+    /**
+     * Default constructor.
+     */
+    public Contract() {
+    }
 
-	/**
-	 * Construct from uri list.
-	 */
-	public Contract(Uri[] list) {
-		if (list != null) {
-			this.list = Arrays.copyOf(list, list.length);
-		}
-	}
+    /**
+     * Construct from a space separated list.
+     */
+    public Contract(String list) {
+        this(parse(list));
+        this.string = list;
+    }
 
-	/**
-	 * Parse a space separated list of uris.
-	 */
-	public static Uri[] parse(String list) {
-		StringTokenizer st = new StringTokenizer(list, " ");
-		ArrayList<Uri> acc = new ArrayList<Uri>();
-		while (st.hasMoreTokens()) {
-			acc.add(new Uri(st.nextToken()));
-		}
-		return (Uri[]) acc.toArray(new Uri[acc.size()]);
-	}
+    /**
+     * Construct from string list.
+     */
+    public Contract(String[] list) {
+        this.list = new Uri[list.length];
+        for (int i = 0; i < list.length; ++i) {
+            Uri uri = new Uri();
+            uri.setVal(list[i]);
+            this.list[i] = uri;
+        }
+    }
 
-	/**
-	 * The primary Uri is always the first, and is supposed to represent a
-	 * contract that merges the entire rest of the list into one fetchable uri.
-	 */
-	public Uri primary() {
-		return list[0];
-	}
+    /**
+     * Construct from uri list.
+     */
+    public Contract(Uri[] list) {
+        if (list != null) {
+            this.list = Arrays.copyOf(list, list.length);
+        }
+    }
 
-	/**
-	 * Return the length of the uri list.
-	 */
-	public int size() {
-		return list.length;
-	}
+    /**
+     * Parse a space separated list of uris.
+     */
+    public static Uri[] parse(String list) {
+        StringTokenizer st = new StringTokenizer(list, " ");
+        ArrayList<Uri> acc = new ArrayList<Uri>();
+        while (st.hasMoreTokens()) {
+            acc.add(new Uri(st.nextToken()));
+        }
+        return (Uri[]) acc.toArray(new Uri[acc.size()]);
+    }
 
-	/**
-	 * Get the uri at the specified index.
-	 */
-	public Uri get(int index) {
-		return list[index];
-	}
+    /**
+     * The primary Uri is always the first, and is supposed to represent a
+     * contract that merges the entire rest of the list into one fetchable uri.
+     */
+    public Uri primary() {
+        return list[0];
+    }
 
-	/**
-	 * Get unsafe reference to list uris.
-	 */
-	public Uri[] list() {
-		return list;
-	}
+    /**
+     * Return the length of the uri list.
+     */
+    public int size() {
+        return list.length;
+    }
 
-	/**
-	 * Return true if this contract list contains the specified uri.
-	 */
-	public boolean contains(Uri uri) {
-		for (int i = 0; i < list.length; ++i) {
-			if (list[i].equals(uri)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    /**
+     * Get the uri at the specified index.
+     */
+    public Uri get(int index) {
+        return list[index];
+    }
 
-	/**
-	 * If this a contract with a size of one for "obix:Obj".
-	 */
-	public boolean containsOnlyObj() {
-		return list.length == 1 && list[0].getVal().equals("obix:obj");
-	}
+    /**
+     * Get unsafe reference to list uris.
+     */
+    public Uri[] list() {
+        return list;
+    }
 
-	/**
-	 * HashCode of Contract
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(list);
-		result = prime * result + ((string == null) ? 0 : string.hashCode());
-		return result;
-	}
+    /**
+     * Return true if this contract list contains the specified uri.
+     */
+    public boolean contains(Uri uri) {
+        for (int i = 0; i < list.length; ++i) {
+            if (list[i].equals(uri)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	/**
-	 * Equality based on the list of uris.
-	 */
-	public boolean equals(Object that) {
-		if (that instanceof Contract) {
-			return toString().equals(that.toString());
-		}
-		return false;
-	}
+    /**
+     * If this a contract with a size of one for "obix:Obj".
+     */
+    public boolean containsOnlyObj() {
+        return list.length == 1 && list[0].getVal().equals("obix:obj");
+    }
 
-	/**
-	 * Encode to a Java expression.
-	 */
-	public String encodeJava() {
-		// might want to escape funny chars
-		return "new Contract(\"" + toString() + "\")";
-	}
+    /**
+     * HashCode of Contract
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Arrays.hashCode(list);
+        result = prime * result + ((string == null) ? 0 : string.hashCode());
+        return result;
+    }
 
-	/**
-	 * Return space separated list of uris.
-	 */
-	public String toString() {
-		if (string == null) {
-			StringBuffer s = new StringBuffer();
-			for (int i = 0; i < list.length; ++i) {
-				if (i > 0) {
-					s.append(' ');
-				}
-				s.append(list[i].getVal());
-			}
-			string = s.toString();
-		}
-		return string;
-	}
+    /**
+     * Equality based on the list of uris.
+     */
+    public boolean equals(Object that) {
+        if (that instanceof Contract) {
+            return toString().equals(that.toString());
+        }
+        return false;
+    }
 
-	static final Contract OBJ = new Contract("obix:obj");
+    /**
+     * Encode to a Java expression.
+     */
+    public String encodeJava() {
+        // might want to escape funny chars
+        return "new Contract(\"" + toString() + "\")";
+    }
 
-	Uri[] list;
-	String string;
+    /**
+     * Return space separated list of uris.
+     */
+    public String toString() {
+        if (string == null) {
+            StringBuffer s = new StringBuffer();
+            for (int i = 0; i < list.length; ++i) {
+                if (i > 0) {
+                    s.append(' ');
+                }
+                s.append(list[i].getVal());
+            }
+            string = s.toString();
+        }
+        return string;
+    }
 
 }

@@ -26,25 +26,20 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.math.BigInteger;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.Duration;
-
 import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.datatype.Duration;
+import java.math.BigInteger;
 
 /**
  * <p>
  * Java class for batchNotify complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="batchNotify">
  *   &lt;complexContent>
@@ -57,59 +52,51 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "batchNotify", propOrder = { "number", "duration" })
+@XmlType(name = "batchNotify", propOrder = {"number", "duration"})
 public class BatchNotify {
 
-	@XmlSchemaType(name = "nonNegativeInteger")
-	@XmlElement(name = ShortName.NUMBER)
-	protected BigInteger number;
-	@XmlElement(name = ShortName.DURATION)
-	protected Duration duration;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlElement(name = ShortName.NUMBER)
+    protected BigInteger number;
+    @XmlElement(name = ShortName.DURATION)
+    protected Duration duration;
 
-	/**
-	 * Gets the value of the number property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getNumber() {
-		return number;
-	}
+    /**
+     * Gets the value of the number property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getNumber() {
+        return number;
+    }
 
-	/**
-	 * Sets the value of the number property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setNumber(BigInteger value) {
-		this.number = value;
-	}
+    /**
+     * Sets the value of the number property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setNumber(BigInteger value) {
+        this.number = value;
+    }
 
-	/**
-	 * Gets the value of the duration property.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getDuration() {
-		return duration;
-	}
+    /**
+     * Gets the value of the duration property.
+     *
+     * @return possible object is {@link Duration }
+     */
+    public Duration getDuration() {
+        return duration;
+    }
 
-	/**
-	 * Sets the value of the duration property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setDuration(Duration value) {
-		this.duration = value;
-	}
+    /**
+     * Sets the value of the duration property.
+     *
+     * @param value allowed object is {@link Duration }
+     */
+    public void setDuration(Duration value) {
+        this.duration = value;
+    }
 
 }

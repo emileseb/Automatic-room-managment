@@ -26,28 +26,22 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.Duration;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.Duration;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -71,281 +65,248 @@ import javax.xml.datatype.Duration;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "execStatus", "execResult", "execDisable",
-		"execTarget", "execMode", "execFrequency", "execDelay", "execNumber",
-		"execReqArgs", "childResource", "subscription" })
+@XmlType(name = "", propOrder = {"execStatus", "execResult", "execDisable",
+        "execTarget", "execMode", "execFrequency", "execDelay", "execNumber",
+        "execReqArgs", "childResource", "subscription"})
 @XmlRootElement(name = "execInstance")
 public class ExecInstance extends RegularResource {
 
-	@XmlElement(required = true)
-	protected BigInteger execStatus;
-	@XmlElement(required = true)
-	protected BigInteger execResult;
-	protected Boolean execDisable;
-	@XmlElement(required = true)
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	protected String execTarget;
-	protected BigInteger execMode;
-	protected Duration execFrequency;
-	protected Duration execDelay;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger execNumber;
-	protected ExecReqArgsListType execReqArgs;
-	protected List<ChildResourceRef> childResource;
-	@XmlElement(namespace = "http://www.onem2m.org/xml/protocols")
-	protected List<Subscription> subscription;
+    @XmlElement(required = true)
+    protected BigInteger execStatus;
+    @XmlElement(required = true)
+    protected BigInteger execResult;
+    protected Boolean execDisable;
+    @XmlElement(required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    protected String execTarget;
+    protected BigInteger execMode;
+    protected Duration execFrequency;
+    protected Duration execDelay;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger execNumber;
+    protected ExecReqArgsListType execReqArgs;
+    protected List<ChildResourceRef> childResource;
+    @XmlElement(namespace = "http://www.onem2m.org/xml/protocols")
+    protected List<Subscription> subscription;
 
-	/**
-	 * Gets the value of the execStatus property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getExecStatus() {
-		return execStatus;
-	}
+    /**
+     * Gets the value of the execStatus property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getExecStatus() {
+        return execStatus;
+    }
 
-	/**
-	 * Sets the value of the execStatus property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setExecStatus(BigInteger value) {
-		this.execStatus = value;
-	}
+    /**
+     * Sets the value of the execStatus property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setExecStatus(BigInteger value) {
+        this.execStatus = value;
+    }
 
-	/**
-	 * Gets the value of the execResult property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getExecResult() {
-		return execResult;
-	}
+    /**
+     * Gets the value of the execResult property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getExecResult() {
+        return execResult;
+    }
 
-	/**
-	 * Sets the value of the execResult property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setExecResult(BigInteger value) {
-		this.execResult = value;
-	}
+    /**
+     * Sets the value of the execResult property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setExecResult(BigInteger value) {
+        this.execResult = value;
+    }
 
-	/**
-	 * Gets the value of the execDisable property.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isExecDisable() {
-		return execDisable;
-	}
+    /**
+     * Gets the value of the execDisable property.
+     *
+     * @return possible object is {@link Boolean }
+     */
+    public Boolean isExecDisable() {
+        return execDisable;
+    }
 
-	/**
-	 * Sets the value of the execDisable property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setExecDisable(Boolean value) {
-		this.execDisable = value;
-	}
+    /**
+     * Sets the value of the execDisable property.
+     *
+     * @param value allowed object is {@link Boolean }
+     */
+    public void setExecDisable(Boolean value) {
+        this.execDisable = value;
+    }
 
-	/**
-	 * Gets the value of the execTarget property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getExecTarget() {
-		return execTarget;
-	}
+    /**
+     * Gets the value of the execTarget property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getExecTarget() {
+        return execTarget;
+    }
 
-	/**
-	 * Sets the value of the execTarget property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setExecTarget(String value) {
-		this.execTarget = value;
-	}
+    /**
+     * Sets the value of the execTarget property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setExecTarget(String value) {
+        this.execTarget = value;
+    }
 
-	/**
-	 * Gets the value of the execMode property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getExecMode() {
-		return execMode;
-	}
+    /**
+     * Gets the value of the execMode property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getExecMode() {
+        return execMode;
+    }
 
-	/**
-	 * Sets the value of the execMode property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setExecMode(BigInteger value) {
-		this.execMode = value;
-	}
+    /**
+     * Sets the value of the execMode property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setExecMode(BigInteger value) {
+        this.execMode = value;
+    }
 
-	/**
-	 * Gets the value of the execFrequency property.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getExecFrequency() {
-		return execFrequency;
-	}
+    /**
+     * Gets the value of the execFrequency property.
+     *
+     * @return possible object is {@link Duration }
+     */
+    public Duration getExecFrequency() {
+        return execFrequency;
+    }
 
-	/**
-	 * Sets the value of the execFrequency property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setExecFrequency(Duration value) {
-		this.execFrequency = value;
-	}
+    /**
+     * Sets the value of the execFrequency property.
+     *
+     * @param value allowed object is {@link Duration }
+     */
+    public void setExecFrequency(Duration value) {
+        this.execFrequency = value;
+    }
 
-	/**
-	 * Gets the value of the execDelay property.
-	 * 
-	 * @return possible object is {@link Duration }
-	 * 
-	 */
-	public Duration getExecDelay() {
-		return execDelay;
-	}
+    /**
+     * Gets the value of the execDelay property.
+     *
+     * @return possible object is {@link Duration }
+     */
+    public Duration getExecDelay() {
+        return execDelay;
+    }
 
-	/**
-	 * Sets the value of the execDelay property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Duration }
-	 * 
-	 */
-	public void setExecDelay(Duration value) {
-		this.execDelay = value;
-	}
+    /**
+     * Sets the value of the execDelay property.
+     *
+     * @param value allowed object is {@link Duration }
+     */
+    public void setExecDelay(Duration value) {
+        this.execDelay = value;
+    }
 
-	/**
-	 * Gets the value of the execNumber property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getExecNumber() {
-		return execNumber;
-	}
+    /**
+     * Gets the value of the execNumber property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getExecNumber() {
+        return execNumber;
+    }
 
-	/**
-	 * Sets the value of the execNumber property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setExecNumber(BigInteger value) {
-		this.execNumber = value;
-	}
+    /**
+     * Sets the value of the execNumber property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setExecNumber(BigInteger value) {
+        this.execNumber = value;
+    }
 
-	/**
-	 * Gets the value of the execReqArgs property.
-	 * 
-	 * @return possible object is {@link ExecReqArgsListType }
-	 * 
-	 */
-	public ExecReqArgsListType getExecReqArgs() {
-		return execReqArgs;
-	}
+    /**
+     * Gets the value of the execReqArgs property.
+     *
+     * @return possible object is {@link ExecReqArgsListType }
+     */
+    public ExecReqArgsListType getExecReqArgs() {
+        return execReqArgs;
+    }
 
-	/**
-	 * Sets the value of the execReqArgs property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ExecReqArgsListType }
-	 * 
-	 */
-	public void setExecReqArgs(ExecReqArgsListType value) {
-		this.execReqArgs = value;
-	}
+    /**
+     * Sets the value of the execReqArgs property.
+     *
+     * @param value allowed object is {@link ExecReqArgsListType }
+     */
+    public void setExecReqArgs(ExecReqArgsListType value) {
+        this.execReqArgs = value;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the subscription property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the subscription property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getSubscription().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link Subscription }
-	 * 
-	 * 
-	 */
-	public List<Subscription> getSubscription() {
-		if (subscription == null) {
-			subscription = new ArrayList<Subscription>();
-		}
-		return this.subscription;
-	}
+    /**
+     * Gets the value of the subscription property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the subscription property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getSubscription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Subscription }
+     */
+    public List<Subscription> getSubscription() {
+        if (subscription == null) {
+            subscription = new ArrayList<Subscription>();
+        }
+        return this.subscription;
+    }
 
 }

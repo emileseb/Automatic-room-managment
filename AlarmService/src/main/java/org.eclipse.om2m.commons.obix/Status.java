@@ -22,10 +22,11 @@ package org.eclipse.om2m.commons.obix;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
+
 /**
  * Status oBIX enumeration
- * @author Francois Aissaoui
  *
+ * @author Francois Aissaoui
  */
 @XmlType(name = "status")
 @XmlEnum
@@ -49,24 +50,22 @@ public enum Status {
     OK("ok");
     private final String value;
 
-   
 
-    
     Status(String v) {
         value = v;
     }
 
-    public String value() {
-        return value;
-    }
-
     public static Status fromValue(String v) {
-        for (Status c: Status.values()) {
+        for (Status c : Status.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
         }
         throw new IllegalArgumentException(v);
+    }
+
+    public String value() {
+        return value;
     }
 
 }

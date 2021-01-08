@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.insa</groupId>
-	<artifactId>HeaterService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>heaterservice</artifactId>
+	<version>alpha</version>
 	<name>HeaterService</name>
 	<description>Change status heater</description>
 
@@ -30,12 +30,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.vaadin.external.google</groupId>
-            <artifactId>android-json</artifactId>
-            <version>0.0.20131108.vaadin1</version>
-            <scope>compile</scope>
-        </dependency>
+		<dependency>
+			<groupId>com.vaadin.external.google</groupId>
+			<artifactId>android-json</artifactId>
+			<version>0.0.20131108.vaadin1</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -26,28 +26,21 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import org.eclipse.om2m.commons.constants.ShortName;
+
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
-import org.eclipse.om2m.commons.constants.ShortName;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -77,418 +70,366 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = ShortName.SUB)
 public class Subscription extends RegularResource {
-	@XmlElement(name = ShortName.EVENT_NOTIFICATION_CRITERIA)
-	protected EventNotificationCriteria eventNotificationCriteria;
-	@XmlSchemaType(name = "positiveInteger")
-	@XmlElement(name = ShortName.EXPIRATION_COUNTER)
-	protected BigInteger expirationCounter;
-	@XmlList
-	@XmlElement(required = true, name = ShortName.NOTIFICATION_URI)
-	protected List<String> notificationURI;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.GROUP_ID)
-	protected String groupID;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.NOTIFICATION_FORWARDING_URI)
-	protected String notificationForwardingURI;
-	@XmlElement(name = ShortName.BATCH_NOTIFY)
-	protected BatchNotify batchNotify;
-	@XmlElement(name = ShortName.RATE_LIMIT)
-	protected RateLimit rateLimit;
-	@XmlSchemaType(name = "positiveInteger")
-	@XmlElement(name = ShortName.PRE_SUBSCRIPTION_NOTIFY)
-	protected BigInteger preSubscriptionNotify;
-	@XmlElement(name = ShortName.PENDING_NOTIFICATION)
-	protected BigInteger pendingNotification;
-	@XmlSchemaType(name = "positiveInteger")
-	@XmlElement(name = ShortName.NOTIFICATION_STORAGE_PRIORITY)
-	protected BigInteger notificationStoragePriority;
-	@XmlElement(name = ShortName.LATEST_NOTIFY)
-	protected Boolean latestNotify;
-	@XmlElement(required = true, name = ShortName.NOTIFICATION_CONTENT_TYPE)
-	protected BigInteger notificationContentType;
-	@XmlElement(name = ShortName.NOTIFICATION_EVENT_CAT)
-	protected String notificationEventCat;
-	@XmlElement(name = ShortName.CREATOR)
-	protected String creator;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.SUBSCRIBER_URI)
-	protected String subscriberURI;
-	@XmlElement(name = ShortName.CHILD_RESOURCE)
-	protected ChildResourceRef childResource;
-	@XmlElement(namespace = "http://www.onem2m.org/xml/protocols", name = ShortName.SCHEDULE)
-	protected Schedule schedule;
+    @XmlElement(name = ShortName.EVENT_NOTIFICATION_CRITERIA)
+    protected EventNotificationCriteria eventNotificationCriteria;
+    @XmlSchemaType(name = "positiveInteger")
+    @XmlElement(name = ShortName.EXPIRATION_COUNTER)
+    protected BigInteger expirationCounter;
+    @XmlList
+    @XmlElement(required = true, name = ShortName.NOTIFICATION_URI)
+    protected List<String> notificationURI;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.GROUP_ID)
+    protected String groupID;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.NOTIFICATION_FORWARDING_URI)
+    protected String notificationForwardingURI;
+    @XmlElement(name = ShortName.BATCH_NOTIFY)
+    protected BatchNotify batchNotify;
+    @XmlElement(name = ShortName.RATE_LIMIT)
+    protected RateLimit rateLimit;
+    @XmlSchemaType(name = "positiveInteger")
+    @XmlElement(name = ShortName.PRE_SUBSCRIPTION_NOTIFY)
+    protected BigInteger preSubscriptionNotify;
+    @XmlElement(name = ShortName.PENDING_NOTIFICATION)
+    protected BigInteger pendingNotification;
+    @XmlSchemaType(name = "positiveInteger")
+    @XmlElement(name = ShortName.NOTIFICATION_STORAGE_PRIORITY)
+    protected BigInteger notificationStoragePriority;
+    @XmlElement(name = ShortName.LATEST_NOTIFY)
+    protected Boolean latestNotify;
+    @XmlElement(required = true, name = ShortName.NOTIFICATION_CONTENT_TYPE)
+    protected BigInteger notificationContentType;
+    @XmlElement(name = ShortName.NOTIFICATION_EVENT_CAT)
+    protected String notificationEventCat;
+    @XmlElement(name = ShortName.CREATOR)
+    protected String creator;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.SUBSCRIBER_URI)
+    protected String subscriberURI;
+    @XmlElement(name = ShortName.CHILD_RESOURCE)
+    protected ChildResourceRef childResource;
+    @XmlElement(namespace = "http://www.onem2m.org/xml/protocols", name = ShortName.SCHEDULE)
+    protected Schedule schedule;
 
-	/**
-	 * Gets the value of the eventNotificationCriteria property.
-	 * 
-	 * @return possible object is {@link EventNotificationCriteria }
-	 * 
-	 */
-	public EventNotificationCriteria getEventNotificationCriteria() {
-		return eventNotificationCriteria;
-	}
+    /**
+     * Gets the value of the eventNotificationCriteria property.
+     *
+     * @return possible object is {@link EventNotificationCriteria }
+     */
+    public EventNotificationCriteria getEventNotificationCriteria() {
+        return eventNotificationCriteria;
+    }
 
-	/**
-	 * Sets the value of the eventNotificationCriteria property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link EventNotificationCriteria }
-	 * 
-	 */
-	public void setEventNotificationCriteria(EventNotificationCriteria value) {
-		this.eventNotificationCriteria = value;
-	}
+    /**
+     * Sets the value of the eventNotificationCriteria property.
+     *
+     * @param value allowed object is {@link EventNotificationCriteria }
+     */
+    public void setEventNotificationCriteria(EventNotificationCriteria value) {
+        this.eventNotificationCriteria = value;
+    }
 
-	/**
-	 * Gets the value of the expirationCounter property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getExpirationCounter() {
-		return expirationCounter;
-	}
+    /**
+     * Gets the value of the expirationCounter property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getExpirationCounter() {
+        return expirationCounter;
+    }
 
-	/**
-	 * Sets the value of the expirationCounter property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setExpirationCounter(BigInteger value) {
-		this.expirationCounter = value;
-	}
+    /**
+     * Sets the value of the expirationCounter property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setExpirationCounter(BigInteger value) {
+        this.expirationCounter = value;
+    }
 
-	/**
-	 * Gets the value of the notificationURI property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the notificationURI property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getNotificationURI().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getNotificationURI() {
-		if (notificationURI == null) {
-			notificationURI = new ArrayList<String>();
-		}
-		return this.notificationURI;
-	}
+    /**
+     * Gets the value of the notificationURI property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the notificationURI property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getNotificationURI().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getNotificationURI() {
+        if (notificationURI == null) {
+            notificationURI = new ArrayList<String>();
+        }
+        return this.notificationURI;
+    }
 
-	/**
-	 * Gets the value of the groupID property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getGroupID() {
-		return groupID;
-	}
+    /**
+     * Gets the value of the groupID property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getGroupID() {
+        return groupID;
+    }
 
-	/**
-	 * Sets the value of the groupID property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setGroupID(String value) {
-		this.groupID = value;
-	}
+    /**
+     * Sets the value of the groupID property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setGroupID(String value) {
+        this.groupID = value;
+    }
 
-	/**
-	 * Gets the value of the notificationForwardingURI property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getNotificationForwardingURI() {
-		return notificationForwardingURI;
-	}
+    /**
+     * Gets the value of the notificationForwardingURI property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getNotificationForwardingURI() {
+        return notificationForwardingURI;
+    }
 
-	/**
-	 * Sets the value of the notificationForwardingURI property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setNotificationForwardingURI(String value) {
-		this.notificationForwardingURI = value;
-	}
+    /**
+     * Sets the value of the notificationForwardingURI property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setNotificationForwardingURI(String value) {
+        this.notificationForwardingURI = value;
+    }
 
-	/**
-	 * Gets the value of the batchNotify property.
-	 * 
-	 * @return possible object is {@link BatchNotify }
-	 * 
-	 */
-	public BatchNotify getBatchNotify() {
-		return batchNotify;
-	}
+    /**
+     * Gets the value of the batchNotify property.
+     *
+     * @return possible object is {@link BatchNotify }
+     */
+    public BatchNotify getBatchNotify() {
+        return batchNotify;
+    }
 
-	/**
-	 * Sets the value of the batchNotify property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BatchNotify }
-	 * 
-	 */
-	public void setBatchNotify(BatchNotify value) {
-		this.batchNotify = value;
-	}
+    /**
+     * Sets the value of the batchNotify property.
+     *
+     * @param value allowed object is {@link BatchNotify }
+     */
+    public void setBatchNotify(BatchNotify value) {
+        this.batchNotify = value;
+    }
 
-	/**
-	 * Gets the value of the rateLimit property.
-	 * 
-	 * @return possible object is {@link RateLimit }
-	 * 
-	 */
-	public RateLimit getRateLimit() {
-		return rateLimit;
-	}
+    /**
+     * Gets the value of the rateLimit property.
+     *
+     * @return possible object is {@link RateLimit }
+     */
+    public RateLimit getRateLimit() {
+        return rateLimit;
+    }
 
-	/**
-	 * Sets the value of the rateLimit property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link RateLimit }
-	 * 
-	 */
-	public void setRateLimit(RateLimit value) {
-		this.rateLimit = value;
-	}
+    /**
+     * Sets the value of the rateLimit property.
+     *
+     * @param value allowed object is {@link RateLimit }
+     */
+    public void setRateLimit(RateLimit value) {
+        this.rateLimit = value;
+    }
 
-	/**
-	 * Gets the value of the preSubscriptionNotify property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getPreSubscriptionNotify() {
-		return preSubscriptionNotify;
-	}
+    /**
+     * Gets the value of the preSubscriptionNotify property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getPreSubscriptionNotify() {
+        return preSubscriptionNotify;
+    }
 
-	/**
-	 * Sets the value of the preSubscriptionNotify property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setPreSubscriptionNotify(BigInteger value) {
-		this.preSubscriptionNotify = value;
-	}
+    /**
+     * Sets the value of the preSubscriptionNotify property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setPreSubscriptionNotify(BigInteger value) {
+        this.preSubscriptionNotify = value;
+    }
 
-	/**
-	 * Gets the value of the pendingNotification property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getPendingNotification() {
-		return pendingNotification;
-	}
+    /**
+     * Gets the value of the pendingNotification property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getPendingNotification() {
+        return pendingNotification;
+    }
 
-	/**
-	 * Sets the value of the pendingNotification property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setPendingNotification(BigInteger value) {
-		this.pendingNotification = value;
-	}
+    /**
+     * Sets the value of the pendingNotification property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setPendingNotification(BigInteger value) {
+        this.pendingNotification = value;
+    }
 
-	/**
-	 * Gets the value of the notificationStoragePriority property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getNotificationStoragePriority() {
-		return notificationStoragePriority;
-	}
+    /**
+     * Gets the value of the notificationStoragePriority property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getNotificationStoragePriority() {
+        return notificationStoragePriority;
+    }
 
-	/**
-	 * Sets the value of the notificationStoragePriority property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setNotificationStoragePriority(BigInteger value) {
-		this.notificationStoragePriority = value;
-	}
+    /**
+     * Sets the value of the notificationStoragePriority property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setNotificationStoragePriority(BigInteger value) {
+        this.notificationStoragePriority = value;
+    }
 
-	/**
-	 * Gets the value of the latestNotify property.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isLatestNotify() {
-		return latestNotify;
-	}
+    /**
+     * Gets the value of the latestNotify property.
+     *
+     * @return possible object is {@link Boolean }
+     */
+    public Boolean isLatestNotify() {
+        return latestNotify;
+    }
 
-	/**
-	 * Sets the value of the latestNotify property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setLatestNotify(Boolean value) {
-		this.latestNotify = value;
-	}
+    /**
+     * Sets the value of the latestNotify property.
+     *
+     * @param value allowed object is {@link Boolean }
+     */
+    public void setLatestNotify(Boolean value) {
+        this.latestNotify = value;
+    }
 
-	/**
-	 * Gets the value of the notificationContentType property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getNotificationContentType() {
-		return notificationContentType;
-	}
+    /**
+     * Gets the value of the notificationContentType property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getNotificationContentType() {
+        return notificationContentType;
+    }
 
-	/**
-	 * Sets the value of the notificationContentType property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setNotificationContentType(BigInteger value) {
-		this.notificationContentType = value;
-	}
+    /**
+     * Sets the value of the notificationContentType property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setNotificationContentType(BigInteger value) {
+        this.notificationContentType = value;
+    }
 
-	/**
-	 * Gets the value of the notificationEventCat property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getNotificationEventCat() {
-		return notificationEventCat;
-	}
+    /**
+     * Gets the value of the notificationEventCat property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getNotificationEventCat() {
+        return notificationEventCat;
+    }
 
-	/**
-	 * Sets the value of the notificationEventCat property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setNotificationEventCat(String value) {
-		this.notificationEventCat = value;
-	}
+    /**
+     * Sets the value of the notificationEventCat property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setNotificationEventCat(String value) {
+        this.notificationEventCat = value;
+    }
 
-	/**
-	 * Gets the value of the creator property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getCreator() {
-		return creator;
-	}
+    /**
+     * Gets the value of the creator property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getCreator() {
+        return creator;
+    }
 
-	/**
-	 * Sets the value of the creator property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setCreator(String value) {
-		this.creator = value;
-	}
+    /**
+     * Sets the value of the creator property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setCreator(String value) {
+        this.creator = value;
+    }
 
-	/**
-	 * Gets the value of the subscriberURI property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getSubscriberURI() {
-		return subscriberURI;
-	}
+    /**
+     * Gets the value of the subscriberURI property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getSubscriberURI() {
+        return subscriberURI;
+    }
 
-	/**
-	 * Sets the value of the subscriberURI property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setSubscriberURI(String value) {
-		this.subscriberURI = value;
-	}
+    /**
+     * Sets the value of the subscriberURI property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setSubscriberURI(String value) {
+        this.subscriberURI = value;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * @return possible object is {@link ChildResourceRef }
-	 * 
-	 */
-	public ChildResourceRef getChildResource() {
-		return childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * @return possible object is {@link ChildResourceRef }
+     */
+    public ChildResourceRef getChildResource() {
+        return childResource;
+    }
 
-	/**
-	 * Sets the value of the childResource property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link ChildResourceRef }
-	 * 
-	 */
-	public void setChildResource(ChildResourceRef value) {
-		this.childResource = value;
-	}
+    /**
+     * Sets the value of the childResource property.
+     *
+     * @param value allowed object is {@link ChildResourceRef }
+     */
+    public void setChildResource(ChildResourceRef value) {
+        this.childResource = value;
+    }
 
-	/**
-	 * Gets the value of the schedule property.
-	 * 
-	 * @return possible object is {@link Schedule }
-	 * 
-	 */
-	public Schedule getSchedule() {
-		return schedule;
-	}
+    /**
+     * Gets the value of the schedule property.
+     *
+     * @return possible object is {@link Schedule }
+     */
+    public Schedule getSchedule() {
+        return schedule;
+    }
 
-	/**
-	 * Sets the value of the schedule property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Schedule }
-	 * 
-	 */
-	public void setSchedule(Schedule value) {
-		this.schedule = value;
-	}
+    /**
+     * Sets the value of the schedule property.
+     *
+     * @param value allowed object is {@link Schedule }
+     */
+    public void setSchedule(Schedule value) {
+        this.schedule = value;
+    }
 
 }

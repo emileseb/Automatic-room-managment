@@ -26,26 +26,21 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import java.math.BigInteger;
+import org.eclipse.om2m.commons.constants.ShortName;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.eclipse.om2m.commons.constants.ShortName;
+import java.math.BigInteger;
 
 /**
  * <p>
  * Java class for operationResult complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="operationResult">
  *   &lt;complexContent>
@@ -64,197 +59,171 @@ import org.eclipse.om2m.commons.constants.ShortName;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = ShortName.OPERATION_RESULT)
 public class OperationResult {
-	@XmlElement(name = ShortName.CONTENT)
-	protected PrimitiveContent content;
-	@XmlElement(name = ShortName.EVENT_CATEGORY)
-	protected String eventCategory;
-	@XmlElement(name = ShortName.FROM)
-	protected String from;
-	@XmlElement(name = ShortName.ORIGINATING_TIMESTAMP)
-	protected String originatingTimestamp;
-	@XmlElement(required = true, name = ShortName.REQUEST_ID)
-	@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-	protected String requestIdentifier;
-	@XmlElement(name = ShortName.RESULT_EXPIRATION_TIMESTAMP)
-	protected String resultExpirationTimestamp;
-	@XmlSchemaType(name = "anyURI")
-	@XmlElement(name = ShortName.TO)
-	protected String to;
-	@XmlElement(required = true, name = ShortName.RESPONSE_STATUS_CODE)
-	protected BigInteger responseStatusCode;
+    @XmlElement(name = ShortName.CONTENT)
+    protected PrimitiveContent content;
+    @XmlElement(name = ShortName.EVENT_CATEGORY)
+    protected String eventCategory;
+    @XmlElement(name = ShortName.FROM)
+    protected String from;
+    @XmlElement(name = ShortName.ORIGINATING_TIMESTAMP)
+    protected String originatingTimestamp;
+    @XmlElement(required = true, name = ShortName.REQUEST_ID)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    protected String requestIdentifier;
+    @XmlElement(name = ShortName.RESULT_EXPIRATION_TIMESTAMP)
+    protected String resultExpirationTimestamp;
+    @XmlSchemaType(name = "anyURI")
+    @XmlElement(name = ShortName.TO)
+    protected String to;
+    @XmlElement(required = true, name = ShortName.RESPONSE_STATUS_CODE)
+    protected BigInteger responseStatusCode;
 
-	/**
-	 * Gets the value of the content property.
-	 * 
-	 * @return possible object is {@link PrimitiveContent }
-	 * 
-	 */
-	public PrimitiveContent getContent() {
-		return content;
-	}
+    /**
+     * Gets the value of the content property.
+     *
+     * @return possible object is {@link PrimitiveContent }
+     */
+    public PrimitiveContent getContent() {
+        return content;
+    }
 
-	/**
-	 * Sets the value of the content property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link PrimitiveContent }
-	 * 
-	 */
-	public void setContent(PrimitiveContent value) {
-		this.content = value;
-	}
+    /**
+     * Sets the value of the content property.
+     *
+     * @param value allowed object is {@link PrimitiveContent }
+     */
+    public void setContent(PrimitiveContent value) {
+        this.content = value;
+    }
 
-	/**
-	 * Gets the value of the eventCategory property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getEventCategory() {
-		return eventCategory;
-	}
+    /**
+     * Gets the value of the eventCategory property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getEventCategory() {
+        return eventCategory;
+    }
 
-	/**
-	 * Sets the value of the eventCategory property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setEventCategory(String value) {
-		this.eventCategory = value;
-	}
+    /**
+     * Sets the value of the eventCategory property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setEventCategory(String value) {
+        this.eventCategory = value;
+    }
 
-	/**
-	 * Gets the value of the from property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getFrom() {
-		return from;
-	}
+    /**
+     * Gets the value of the from property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getFrom() {
+        return from;
+    }
 
-	/**
-	 * Sets the value of the from property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setFrom(String value) {
-		this.from = value;
-	}
+    /**
+     * Sets the value of the from property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setFrom(String value) {
+        this.from = value;
+    }
 
-	/**
-	 * Gets the value of the originatingTimestamp property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getOriginatingTimestamp() {
-		return originatingTimestamp;
-	}
+    /**
+     * Gets the value of the originatingTimestamp property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getOriginatingTimestamp() {
+        return originatingTimestamp;
+    }
 
-	/**
-	 * Sets the value of the originatingTimestamp property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setOriginatingTimestamp(String value) {
-		this.originatingTimestamp = value;
-	}
+    /**
+     * Sets the value of the originatingTimestamp property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setOriginatingTimestamp(String value) {
+        this.originatingTimestamp = value;
+    }
 
-	/**
-	 * Gets the value of the requestIdentifier property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getRequestIdentifier() {
-		return requestIdentifier;
-	}
+    /**
+     * Gets the value of the requestIdentifier property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getRequestIdentifier() {
+        return requestIdentifier;
+    }
 
-	/**
-	 * Sets the value of the requestIdentifier property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setRequestIdentifier(String value) {
-		this.requestIdentifier = value;
-	}
+    /**
+     * Sets the value of the requestIdentifier property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setRequestIdentifier(String value) {
+        this.requestIdentifier = value;
+    }
 
-	/**
-	 * Gets the value of the resultExpirationTimestamp property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getResultExpirationTimestamp() {
-		return resultExpirationTimestamp;
-	}
+    /**
+     * Gets the value of the resultExpirationTimestamp property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getResultExpirationTimestamp() {
+        return resultExpirationTimestamp;
+    }
 
-	/**
-	 * Sets the value of the resultExpirationTimestamp property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setResultExpirationTimestamp(String value) {
-		this.resultExpirationTimestamp = value;
-	}
+    /**
+     * Sets the value of the resultExpirationTimestamp property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setResultExpirationTimestamp(String value) {
+        this.resultExpirationTimestamp = value;
+    }
 
-	/**
-	 * Gets the value of the to property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getTo() {
-		return to;
-	}
+    /**
+     * Gets the value of the to property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getTo() {
+        return to;
+    }
 
-	/**
-	 * Sets the value of the to property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setTo(String value) {
-		this.to = value;
-	}
+    /**
+     * Sets the value of the to property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setTo(String value) {
+        this.to = value;
+    }
 
-	/**
-	 * Gets the value of the responseStatusCode property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getResponseStatusCode() {
-		return responseStatusCode;
-	}
+    /**
+     * Gets the value of the responseStatusCode property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getResponseStatusCode() {
+        return responseStatusCode;
+    }
 
-	/**
-	 * Sets the value of the responseStatusCode property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setResponseStatusCode(BigInteger value) {
-		this.responseStatusCode = value;
-	}
+    /**
+     * Sets the value of the responseStatusCode property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setResponseStatusCode(BigInteger value) {
+        this.responseStatusCode = value;
+    }
 
 }

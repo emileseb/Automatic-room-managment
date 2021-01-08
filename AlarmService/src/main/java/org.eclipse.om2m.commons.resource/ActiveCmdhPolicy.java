@@ -26,20 +26,16 @@
 
 package org.eclipse.om2m.commons.resource;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -51,36 +47,31 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "activeCmdhPolicyLink" })
+@XmlType(name = "", propOrder = {"activeCmdhPolicyLink"})
 @XmlRootElement(name = "activeCmdhPolicy")
 public class ActiveCmdhPolicy extends MgmtResource {
 
-	@XmlElement(required = true)
-	protected String activeCmdhPolicyLink;
+    @XmlElement(required = true)
+    protected String activeCmdhPolicyLink;
 
-	/**
-	 * Gets the value of the activeCmdhPolicyLink property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getActiveCmdhPolicyLink() {
-		return activeCmdhPolicyLink;
-	}
+    /**
+     * Gets the value of the activeCmdhPolicyLink property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getActiveCmdhPolicyLink() {
+        return activeCmdhPolicyLink;
+    }
 
-	/**
-	 * Sets the value of the activeCmdhPolicyLink property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setActiveCmdhPolicyLink(String value) {
-		this.activeCmdhPolicyLink = value;
-	}
+    /**
+     * Sets the value of the activeCmdhPolicyLink property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setActiveCmdhPolicyLink(String value) {
+        this.activeCmdhPolicyLink = value;
+    }
 
 }

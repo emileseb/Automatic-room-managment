@@ -26,26 +26,19 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -62,160 +55,141 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "order", "defEcValue", "requestOrigin",
-		"requestContext", "requestContextNotification",
-		"requestCharacteristics" })
+@XmlType(name = "", propOrder = {"order", "defEcValue", "requestOrigin",
+        "requestContext", "requestContextNotification",
+        "requestCharacteristics"})
 @XmlRootElement(name = "cmdhDefEcValue")
 public class CmdhDefEcValue extends MgmtResource {
 
-	@XmlElement(required = true)
-	@XmlSchemaType(name = "positiveInteger")
-	protected BigInteger order;
-	@XmlElement(required = true)
-	protected String defEcValue;
-	@XmlList
-	@XmlElement(required = true)
-	protected List<String> requestOrigin;
-	protected Object requestContext;
-	protected Boolean requestContextNotification;
-	protected Object requestCharacteristics;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger order;
+    @XmlElement(required = true)
+    protected String defEcValue;
+    @XmlList
+    @XmlElement(required = true)
+    protected List<String> requestOrigin;
+    protected Object requestContext;
+    protected Boolean requestContextNotification;
+    protected Object requestCharacteristics;
 
-	/**
-	 * Gets the value of the order property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getOrder() {
-		return order;
-	}
+    /**
+     * Gets the value of the order property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getOrder() {
+        return order;
+    }
 
-	/**
-	 * Sets the value of the order property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setOrder(BigInteger value) {
-		this.order = value;
-	}
+    /**
+     * Sets the value of the order property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setOrder(BigInteger value) {
+        this.order = value;
+    }
 
-	/**
-	 * Gets the value of the defEcValue property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getDefEcValue() {
-		return defEcValue;
-	}
+    /**
+     * Gets the value of the defEcValue property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getDefEcValue() {
+        return defEcValue;
+    }
 
-	/**
-	 * Sets the value of the defEcValue property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setDefEcValue(String value) {
-		this.defEcValue = value;
-	}
+    /**
+     * Sets the value of the defEcValue property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setDefEcValue(String value) {
+        this.defEcValue = value;
+    }
 
-	/**
-	 * Gets the value of the requestOrigin property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the requestOrigin property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getRequestOrigin().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getRequestOrigin() {
-		if (requestOrigin == null) {
-			requestOrigin = new ArrayList<String>();
-		}
-		return this.requestOrigin;
-	}
+    /**
+     * Gets the value of the requestOrigin property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the requestOrigin property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getRequestOrigin().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getRequestOrigin() {
+        if (requestOrigin == null) {
+            requestOrigin = new ArrayList<String>();
+        }
+        return this.requestOrigin;
+    }
 
-	/**
-	 * Gets the value of the requestContext property.
-	 * 
-	 * @return possible object is {@link Object }
-	 * 
-	 */
-	public Object getRequestContext() {
-		return requestContext;
-	}
+    /**
+     * Gets the value of the requestContext property.
+     *
+     * @return possible object is {@link Object }
+     */
+    public Object getRequestContext() {
+        return requestContext;
+    }
 
-	/**
-	 * Sets the value of the requestContext property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Object }
-	 * 
-	 */
-	public void setRequestContext(Object value) {
-		this.requestContext = value;
-	}
+    /**
+     * Sets the value of the requestContext property.
+     *
+     * @param value allowed object is {@link Object }
+     */
+    public void setRequestContext(Object value) {
+        this.requestContext = value;
+    }
 
-	/**
-	 * Gets the value of the requestContextNotification property.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isRequestContextNotification() {
-		return requestContextNotification;
-	}
+    /**
+     * Gets the value of the requestContextNotification property.
+     *
+     * @return possible object is {@link Boolean }
+     */
+    public Boolean isRequestContextNotification() {
+        return requestContextNotification;
+    }
 
-	/**
-	 * Sets the value of the requestContextNotification property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setRequestContextNotification(Boolean value) {
-		this.requestContextNotification = value;
-	}
+    /**
+     * Sets the value of the requestContextNotification property.
+     *
+     * @param value allowed object is {@link Boolean }
+     */
+    public void setRequestContextNotification(Boolean value) {
+        this.requestContextNotification = value;
+    }
 
-	/**
-	 * Gets the value of the requestCharacteristics property.
-	 * 
-	 * @return possible object is {@link Object }
-	 * 
-	 */
-	public Object getRequestCharacteristics() {
-		return requestCharacteristics;
-	}
+    /**
+     * Gets the value of the requestCharacteristics property.
+     *
+     * @return possible object is {@link Object }
+     */
+    public Object getRequestCharacteristics() {
+        return requestCharacteristics;
+    }
 
-	/**
-	 * Sets the value of the requestCharacteristics property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Object }
-	 * 
-	 */
-	public void setRequestCharacteristics(Object value) {
-		this.requestCharacteristics = value;
-	}
+    /**
+     * Sets the value of the requestCharacteristics property.
+     *
+     * @param value allowed object is {@link Object }
+     */
+    public void setRequestCharacteristics(Object value) {
+        this.requestCharacteristics = value;
+    }
 
 }

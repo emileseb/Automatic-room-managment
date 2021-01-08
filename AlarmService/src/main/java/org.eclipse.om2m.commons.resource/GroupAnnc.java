@@ -26,26 +26,19 @@
 
 package org.eclipse.om2m.commons.resource;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
 /**
  * <p>
  * Java class for anonymous complex type.
- * 
+ *
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -68,275 +61,247 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "memberType", "currentNrOfMembers",
-		"maxNrOfMembers", "memberIDs", "membersAccessControlPolicyIDs",
-		"memberTypeValidated", "consistencyStrategy", "groupName",
-		"childResource", "subscription" })
+@XmlType(name = "", propOrder = {"memberType", "currentNrOfMembers",
+        "maxNrOfMembers", "memberIDs", "membersAccessControlPolicyIDs",
+        "memberTypeValidated", "consistencyStrategy", "groupName",
+        "childResource", "subscription"})
 @XmlRootElement(name = "groupAnnc")
 public class GroupAnnc extends AnnouncedResource {
 
-	protected BigInteger memberType;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger currentNrOfMembers;
-	@XmlSchemaType(name = "nonNegativeInteger")
-	protected BigInteger maxNrOfMembers;
-	@XmlList
-	protected List<String> memberIDs;
-	@XmlList
-	protected List<String> membersAccessControlPolicyIDs;
-	protected Boolean memberTypeValidated;
-	protected BigInteger consistencyStrategy;
-	protected String groupName;
-	protected List<ChildResourceRef> childResource;
-	@XmlElement(namespace = "http://www.onem2m.org/xml/protocols")
-	protected List<Subscription> subscription;
+    protected BigInteger memberType;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger currentNrOfMembers;
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger maxNrOfMembers;
+    @XmlList
+    protected List<String> memberIDs;
+    @XmlList
+    protected List<String> membersAccessControlPolicyIDs;
+    protected Boolean memberTypeValidated;
+    protected BigInteger consistencyStrategy;
+    protected String groupName;
+    protected List<ChildResourceRef> childResource;
+    @XmlElement(namespace = "http://www.onem2m.org/xml/protocols")
+    protected List<Subscription> subscription;
 
-	/**
-	 * Gets the value of the memberType property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMemberType() {
-		return memberType;
-	}
+    /**
+     * Gets the value of the memberType property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMemberType() {
+        return memberType;
+    }
 
-	/**
-	 * Sets the value of the memberType property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMemberType(BigInteger value) {
-		this.memberType = value;
-	}
+    /**
+     * Sets the value of the memberType property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMemberType(BigInteger value) {
+        this.memberType = value;
+    }
 
-	/**
-	 * Gets the value of the currentNrOfMembers property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getCurrentNrOfMembers() {
-		return currentNrOfMembers;
-	}
+    /**
+     * Gets the value of the currentNrOfMembers property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getCurrentNrOfMembers() {
+        return currentNrOfMembers;
+    }
 
-	/**
-	 * Sets the value of the currentNrOfMembers property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setCurrentNrOfMembers(BigInteger value) {
-		this.currentNrOfMembers = value;
-	}
+    /**
+     * Sets the value of the currentNrOfMembers property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setCurrentNrOfMembers(BigInteger value) {
+        this.currentNrOfMembers = value;
+    }
 
-	/**
-	 * Gets the value of the maxNrOfMembers property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getMaxNrOfMembers() {
-		return maxNrOfMembers;
-	}
+    /**
+     * Gets the value of the maxNrOfMembers property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getMaxNrOfMembers() {
+        return maxNrOfMembers;
+    }
 
-	/**
-	 * Sets the value of the maxNrOfMembers property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setMaxNrOfMembers(BigInteger value) {
-		this.maxNrOfMembers = value;
-	}
+    /**
+     * Sets the value of the maxNrOfMembers property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setMaxNrOfMembers(BigInteger value) {
+        this.maxNrOfMembers = value;
+    }
 
-	/**
-	 * Gets the value of the memberIDs property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the memberIDs property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getMemberIDs().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getMemberIDs() {
-		if (memberIDs == null) {
-			memberIDs = new ArrayList<String>();
-		}
-		return this.memberIDs;
-	}
+    /**
+     * Gets the value of the memberIDs property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the memberIDs property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getMemberIDs().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getMemberIDs() {
+        if (memberIDs == null) {
+            memberIDs = new ArrayList<String>();
+        }
+        return this.memberIDs;
+    }
 
-	/**
-	 * Gets the value of the membersAccessControlPolicyIDs property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the membersAccessControlPolicyIDs property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getMembersAccessControlPolicyIDs().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link String }
-	 * 
-	 * 
-	 */
-	public List<String> getMembersAccessControlPolicyIDs() {
-		if (membersAccessControlPolicyIDs == null) {
-			membersAccessControlPolicyIDs = new ArrayList<String>();
-		}
-		return this.membersAccessControlPolicyIDs;
-	}
+    /**
+     * Gets the value of the membersAccessControlPolicyIDs property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the membersAccessControlPolicyIDs property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getMembersAccessControlPolicyIDs().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link String }
+     */
+    public List<String> getMembersAccessControlPolicyIDs() {
+        if (membersAccessControlPolicyIDs == null) {
+            membersAccessControlPolicyIDs = new ArrayList<String>();
+        }
+        return this.membersAccessControlPolicyIDs;
+    }
 
-	/**
-	 * Gets the value of the memberTypeValidated property.
-	 * 
-	 * @return possible object is {@link Boolean }
-	 * 
-	 */
-	public Boolean isMemberTypeValidated() {
-		return memberTypeValidated;
-	}
+    /**
+     * Gets the value of the memberTypeValidated property.
+     *
+     * @return possible object is {@link Boolean }
+     */
+    public Boolean isMemberTypeValidated() {
+        return memberTypeValidated;
+    }
 
-	/**
-	 * Sets the value of the memberTypeValidated property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Boolean }
-	 * 
-	 */
-	public void setMemberTypeValidated(Boolean value) {
-		this.memberTypeValidated = value;
-	}
+    /**
+     * Sets the value of the memberTypeValidated property.
+     *
+     * @param value allowed object is {@link Boolean }
+     */
+    public void setMemberTypeValidated(Boolean value) {
+        this.memberTypeValidated = value;
+    }
 
-	/**
-	 * Gets the value of the consistencyStrategy property.
-	 * 
-	 * @return possible object is {@link BigInteger }
-	 * 
-	 */
-	public BigInteger getConsistencyStrategy() {
-		return consistencyStrategy;
-	}
+    /**
+     * Gets the value of the consistencyStrategy property.
+     *
+     * @return possible object is {@link BigInteger }
+     */
+    public BigInteger getConsistencyStrategy() {
+        return consistencyStrategy;
+    }
 
-	/**
-	 * Sets the value of the consistencyStrategy property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link BigInteger }
-	 * 
-	 */
-	public void setConsistencyStrategy(BigInteger value) {
-		this.consistencyStrategy = value;
-	}
+    /**
+     * Sets the value of the consistencyStrategy property.
+     *
+     * @param value allowed object is {@link BigInteger }
+     */
+    public void setConsistencyStrategy(BigInteger value) {
+        this.consistencyStrategy = value;
+    }
 
-	/**
-	 * Gets the value of the groupName property.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getGroupName() {
-		return groupName;
-	}
+    /**
+     * Gets the value of the groupName property.
+     *
+     * @return possible object is {@link String }
+     */
+    public String getGroupName() {
+        return groupName;
+    }
 
-	/**
-	 * Sets the value of the groupName property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setGroupName(String value) {
-		this.groupName = value;
-	}
+    /**
+     * Sets the value of the groupName property.
+     *
+     * @param value allowed object is {@link String }
+     */
+    public void setGroupName(String value) {
+        this.groupName = value;
+    }
 
-	/**
-	 * Gets the value of the childResource property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the childResource property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChildResource().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ChildResourceRef }
-	 * 
-	 * 
-	 */
-	public List<ChildResourceRef> getChildResource() {
-		if (childResource == null) {
-			childResource = new ArrayList<ChildResourceRef>();
-		}
-		return this.childResource;
-	}
+    /**
+     * Gets the value of the childResource property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the childResource property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getChildResource().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ChildResourceRef }
+     */
+    public List<ChildResourceRef> getChildResource() {
+        if (childResource == null) {
+            childResource = new ArrayList<ChildResourceRef>();
+        }
+        return this.childResource;
+    }
 
-	/**
-	 * Gets the value of the subscription property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the subscription property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getSubscription().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link Subscription }
-	 * 
-	 * 
-	 */
-	public List<Subscription> getSubscription() {
-		if (subscription == null) {
-			subscription = new ArrayList<Subscription>();
-		}
-		return this.subscription;
-	}
+    /**
+     * Gets the value of the subscription property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the subscription property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     *
+     * <pre>
+     * getSubscription().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Subscription }
+     */
+    public List<Subscription> getSubscription() {
+        if (subscription == null) {
+            subscription = new ArrayList<Subscription>();
+        }
+        return this.subscription;
+    }
 
 }
