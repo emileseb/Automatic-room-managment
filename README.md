@@ -1,7 +1,7 @@
 # AutomaticRoomManagement
 
-Project : Automatic management of INSA's rooms Automation of the INSA's rooms management Part of the Sofware Oriented
-Architecture course
+Project : Automatic management of INSA's rooms  
+Part of the Software Oriented Architecture course
 
 ## Project description
 
@@ -47,6 +47,8 @@ there are presence activities from 22h, an alarm must be triggered.
 `make test`
 ### Run
 `make run`
+### Kill background instances
+`make killall`
 
 ## Service Spec
 
@@ -57,9 +59,9 @@ that the alarm has been triggered
 
 ### Presence
 
-When recieving a GET reguest on /presence Return a JSON boolean of the presence
+When receiving a GET request on /presence Return a JSON boolean of the presence
 
 ### Thermometer
 
-When recieving a GET request on /thermometer/{room} give the temperature in the asked room Two existing room : indoor ;
+When receiving a GET request on /thermometer/{room} give the temperature in the asked room Two existing room : indoor ;
 outdoor Return in a JSON a random value between 0 and 30°C
