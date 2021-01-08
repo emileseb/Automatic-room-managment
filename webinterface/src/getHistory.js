@@ -8,7 +8,7 @@ export default function GetHistory(props) {
         fetch(props.uri)
             .then(response => response.json())
             .then(data => setTemperatureHistory(data));
-    });
+    }, []);
     const listEntries = temperatureHistory.map((entry) =>  <li>{entry.entree}</li>);
     return (
         <div className="card text-center m-3">
