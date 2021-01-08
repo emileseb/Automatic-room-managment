@@ -38,21 +38,22 @@ public class AutomanagementApplication implements Runnable {
 
     private RestTemplate restTemplate;
 
+    // counter used to avoid triggering the alarm too often
+    int alarmCounter = 0;
 
     public static void main(String[] args) throws InterruptedException {
 
 
         ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
 
-
         //schedule to run after sometime
         System.out.println("Current Time = "+new Date());
 
         AutomanagementApplication app = new AutomanagementApplication();
-        scheduledThreadPool.schedule(app, 5, TimeUnit.SECONDS);
+        scheduledThreadPool.scheduleAtFixedRate(app, 5, 6, TimeUnit.SECONDS);
 
         //add some delay to let some threads spawn by scheduler
-        Thread.sleep(30000);
+        Thread.sleep(60000);
 
         scheduledThreadPool.shutdown();
     }
@@ -64,8 +65,14 @@ public class AutomanagementApplication implements Runnable {
         if (checkPresence()) {
             // Check if INSA is closed
             if (isClosed()) {
-                // Trigger the alarm
-                triggerAlarm(1);
+                // Do not trigger the alarm if it has been triggered in the last 8 periods
+                if (alarmCounter < 8){
+                    alarmCounter++;
+                } else {
+                    // Trigger the alarm
+                    triggerAlarm(1);
+                    alarmCounter = 0;
+                }
             }
         }
         try {
