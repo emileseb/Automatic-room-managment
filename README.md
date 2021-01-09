@@ -65,3 +65,7 @@ When receiving a GET request on /presence Return a JSON boolean of the presence
 
 When receiving a GET request on /thermometer/{room} give the temperature in the asked room Two existing room : indoor ;
 outdoor Return in a JSON a random value between 0 and 30°C
+
+### Heater
+
+When recieving a POST request on /heater/{temperature}, triggers the heater and return that the heater is ON with the expected temperature.
